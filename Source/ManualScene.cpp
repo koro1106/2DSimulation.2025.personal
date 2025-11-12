@@ -1,5 +1,6 @@
 #include "ManualScene.h"
 #include "ImageManager.h"
+#include "OverlayManager.h"
 
 ManualScene::ManualScene()
 {
@@ -7,7 +8,9 @@ ManualScene::ManualScene()
 	// Get the image handle
 	int back = ImageManager::Get("back");
 
-	buttons.emplace_back(700, 250, 120, 93, "Back", back);
+	buttons.emplace_back(700, 250, 120, 93, "Back", back,[]() {
+		OverlayManager::HideOverlay();
+	});
 }
 
 ManualScene::~ManualScene()
@@ -22,7 +25,7 @@ void ManualScene::Update()
 void ManualScene::Draw()
 {
 	//Button Drawing
-	for (const auto& button : buttons)
+	for (auto& button : buttons)
 	{
 		button.Draw();
 	}

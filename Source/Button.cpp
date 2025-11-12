@@ -2,9 +2,10 @@
 #include "CSVManager.h"
 #include "../Library/SceneBase.h"
 #include "ImageManager.h"
+#include "OverlayAnimation.h"
 
-Button::Button(int x, int y, int width, int height, const std::string& buttonID, int imageHandle)
-	: x(x), y(y), width(width), height(height), buttonID(buttonID), imageHandle(imageHandle) {}
+Button::Button(int x, int y, int width, int height, const std::string& buttonID, int imageHandle,const std::function<void()> onClick)
+	: x(x), y(y), width(width), height(height), buttonID(buttonID), imageHandle(imageHandle), onClickFunc(onClick) {}
 
 bool Button::IsMouseOver(int mouseX, int mouseY) const
 {
@@ -14,19 +15,28 @@ bool Button::IsMouseOver(int mouseX, int mouseY) const
 
 void Button::OnClick() const
 {
-    std::string currentScene = SceneManager::GetCurrentSceneName();
-    std::string nextScene = CSVManager::GetNextScene(currentScene, this->buttonID);
-    if (!nextScene.empty()) {
-        CSVManager::ChangeScene(nextScene);
-    }
+	if (onClickFunc) 
+	{
+		onClickFunc();
+	}
+	else
+	{
+		//SceneChange
+		std::string currentScene = SceneManager::GetCurrentSceneName();
+		std::string nextScene = CSVManager::GetNextScene(currentScene, this->buttonID);
+		if (!nextScene.empty()) 
+		{
+			CSVManager::ChangeScene(nextScene);
+		}
+	}
 }
 
 void Button::Draw() const
 {
-    if (imageHandle != -1)
-    {
-        DrawGraph(x, y, imageHandle, TRUE);
-    }
+	if (imageHandle != -1)
+	{
+		DrawGraph(x, y, imageHandle, TRUE);
+	}
 }
 
 void Button::ButtonSystem(std::vector<Button>& buttons)

@@ -15,7 +15,11 @@ public:
 	//Scene Change
 	static void ChangeScene(const std::string& sceneName);
 
+	//ChangeScene Or Overlay
+	static void ChangeSceneOrOverlay(const std::string& currentScene, const std::string& buttonID);
+
 private:
 	//key: currentSceneName, value:(key:buttonID,value:destinationScene)
 	static std::map<std::string, std::map<std::string, std::string>> transitions;
+	static std::map<std::string, std::map<std::string, std::string>> displayModes;
 };

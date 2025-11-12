@@ -27,34 +27,6 @@ SceneBase * SceneFactory::Create(const std::string & name)
 	{
 		return new PlayScene();
 	}
-	if (name == "LIST")
-	{
-		return new ListScene();
-	}
-	if (name == "MANUAL")
-	{
-		return new ManualScene();
-	}
-	if (name == "CAUTION")
-	{
-		return new CautionScene();
-	}
-	if (name == "CLOTHES1")
-	{
-		return new ClothesScene1();
-	}
-	if (name == "CLOTHES2")
-	{
-		return new ClothesScene2();
-	}
-	if (name == "CLOTHES3")
-	{
-		return new ClothesScene3();
-	}
-	if (name == "CLOTHES4")
-	{
-		return new ClothesScene4();
-	}
 	
 	assert(false);
 	return nullptr;

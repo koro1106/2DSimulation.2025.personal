@@ -1,5 +1,6 @@
 #include "ListScene.h"
 #include "ImageManager.h"
+#include "OverlayManager.h"
 
 ListScene::ListScene()
 {
@@ -7,7 +8,9 @@ ListScene::ListScene()
 	// Get the image handle
 	int back = ImageManager::Get("back");
 	 
-	buttons.emplace_back(700, 250, 120, 93, "Back", back);
+	buttons.emplace_back(590, 90, 120, 93, "Back", back, []() {
+		OverlayManager::HideOverlay();
+		});
 }
 
 ListScene::~ListScene()
@@ -21,7 +24,7 @@ void ListScene::Update()
 
 void ListScene::Draw()
 {
-	DrawGraph(0, 0, ImageManager::Get("listBg"), TRUE);
+	DrawGraph(650, 110, ImageManager::Get("listScene"), TRUE);
 
 	//Button Drawing
 	for (const auto& button : buttons)

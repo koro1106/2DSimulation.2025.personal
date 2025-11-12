@@ -21,7 +21,7 @@ void CautionScene::Update()
 
 void CautionScene::Draw()
 {
-	//Button Drawing
+	//ƒ{ƒ^ƒ“•`‰æ
 	for (const auto& button : buttons)
 	{
 		button.Draw();

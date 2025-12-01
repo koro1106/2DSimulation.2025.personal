@@ -8,7 +8,7 @@ ManualScene::ManualScene()
 	// Get the image handle
 	int back = ImageManager::Get("back");
 
-	buttons.emplace_back(700, 250, 120, 93, "Back", back,[]() {
+	buttons.emplace_back(700, 250, 120, 93, "SceneBack", back,[]() {
 		OverlayManager::HideOverlay();
 	});
 }

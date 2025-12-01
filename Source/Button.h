@@ -3,8 +3,6 @@
 #include <vector>
 #include <functional>
 
-//using namespace std;
-
 class Button
 {
 public:
@@ -18,6 +16,5 @@ private:
 	int width, height;
 	std::string buttonID;
 	int imageHandle; // ボタンの画像ハンドル
-	std::function<void()>onClickFunc; //ボタンがクリックされたときに実行される関数
-
+	std::function<void()>onClickFunc; //ボタンがクリックされたときに実行される関数(関数を格納できる変数)
 };

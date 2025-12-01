@@ -1,10 +1,10 @@
 #pragma once
 #include "../Library/SceneBase.h"
+#include <vector> 
+#include "Button.h"
 
 /// <summary>
 /// タイトルシーン
-/// 
-/// タイトルを表示して、キーを押したらプレイシーンに移行する。
 /// </summary>
 class TitleScene : public SceneBase
 {
@@ -14,11 +14,11 @@ public:
 	void Update() override;
 	void Draw() override;
 private:
-	int TitleImage;
-	int buttonX = 144;//button_X
-	int buttonY = 644;//button_Y
-	int buttonWidth = 440;//button_Width
-	int buttonHeight = 140;//button_Height
 	int mouseX, mouseY;
 	bool prevButton; 
+	int fontHandl;
+	std::vector<Button> buttons;
+	float t = 0.0f;
+	float gearAngle = 0.0f; // 歯車回転速度
+	int mx, my;// マウス位置
 };

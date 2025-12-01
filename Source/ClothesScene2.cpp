@@ -3,7 +3,7 @@
 #include "ClothesData.h"
 #include "OverlayManager.h"
 #include "EquipmentsCSVManager.h"
-
+#include "ButtonPosCSVManager.h"
 
 ClothesScene2::ClothesScene2()
 {
@@ -19,39 +19,44 @@ ClothesScene2::ClothesScene2()
 	int belt5 = ImageManager::Get("Belt5");
 
 	// Overwrite button
-	buttons.emplace_back(ClothesData::clothes_1ButtonX, ClothesData::clothesButtonY, 100, 100, "Belt_1", belt1, [this]() {
-		ClothesData::SetSelectedBelt(ImageManager::Get("Belt1"));// 装備中の装備画像セット
+	auto [x1, y1] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_1);
+	buttons.emplace_back(x1, y1, 100, 100, "Belt_1", belt1, []() {
+		ClothesData::SetSelectedBelt("belt1",ImageManager::Get("Belt1"));// 装備中の装備画像セット
 		ClothesData::SetSelectedEquipmentID("belt1");// 装備IDセット
 		ClothesData::UpdateScoreAndExplanation("belt1");
 		});
-	buttons.emplace_back(ClothesData::clothes_2ButtonX, ClothesData::clothesButtonY, 100, 100, "Belt_2", belt2, [this]() {
-		ClothesData::SetSelectedBelt(ImageManager::Get("Belt2"));
+	auto [x2, y2] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_2);
+	buttons.emplace_back(x2, y2, 100, 100, "Belt_2", belt2, []() {
+		ClothesData::SetSelectedBelt("belt2", ImageManager::Get("Belt2"));
 		ClothesData::SetSelectedEquipmentID("belt2");
 		ClothesData::UpdateScoreAndExplanation("belt2");
 		});
-	buttons.emplace_back(ClothesData::clothes_3ButtonX, ClothesData::clothesButtonY, 100, 100, "Belt_3", belt3, [this]() {
-		ClothesData::SetSelectedBelt(ImageManager::Get("Belt3"));
+	auto [x3, y3] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_3);
+	buttons.emplace_back(x3, y3, 100, 100, "Belt_3", belt3, []() {
+		ClothesData::SetSelectedBelt("belt3", ImageManager::Get("Belt3"));
 		ClothesData::SetSelectedEquipmentID("belt3");
 		ClothesData::UpdateScoreAndExplanation("belt3");
 		});
-	buttons.emplace_back(ClothesData::clothes_4ButtonX, ClothesData::clothesButtonY, 100, 100, "Belt_4", belt4, [this]() {
-		ClothesData::SetSelectedBelt(ImageManager::Get("Belt4"));
+	auto [x4, y4] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_4);
+	buttons.emplace_back(x4, y4, 100, 100, "Belt_4", belt4, []() {
+		ClothesData::SetSelectedBelt("belt4", ImageManager::Get("Belt4"));
 		ClothesData::SetSelectedEquipmentID("belt4");
 		ClothesData::UpdateScoreAndExplanation("belt4");
 		});
-	buttons.emplace_back(ClothesData::clothes_5ButtonX, ClothesData::clothesButtonY, 100, 100, "Belt_5", belt5, [this]() {
-		ClothesData::SetSelectedBelt(ImageManager::Get("Belt5"));
+	auto [x5, y5] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_5);
+	buttons.emplace_back(x5, y5, 100, 100, "Belt_5", belt5, []() {
+		ClothesData::SetSelectedBelt("belt5", ImageManager::Get("Belt5"));
 		ClothesData::SetSelectedEquipmentID("belt5");
 		ClothesData::UpdateScoreAndExplanation("belt5");
 		});
 
-	buttons.emplace_back(ClothesData::sceneBackButtonX, ClothesData::sceneBackButtonY, 120, 93, "SceneBack", clothesBack, []() {
+	buttons.emplace_back(ButtonPosCSVManager::pos.sceneBackButtonX, ButtonPosCSVManager::pos.sceneBackButtonY, 120, 93, "SceneBack", clothesBack, []() {
 		OverlayManager::HideOverlay();
 		});
-	buttons.emplace_back(ClothesData::backButtonX, ClothesData::backNextbuttonY, 150, 150, "Back", back, []() {
+	buttons.emplace_back(ButtonPosCSVManager::pos.backButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Back", back, []() {
 		OverlayManager::ShowOverlay("CLOTHES1");
 		});
-	buttons.emplace_back(ClothesData::nextButtonX, ClothesData::backNextbuttonY, 150, 150, "Next", next, []() {
+	buttons.emplace_back(ButtonPosCSVManager::pos.nextButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Next", next, []() {
 		OverlayManager::ShowOverlay("CLOTHES3");
 		});
 
@@ -83,7 +88,7 @@ void ClothesScene2::Draw()
 		button.Draw();
 	}
 
-	int beltImage = ClothesData::GetSelectedBelt();
+	int beltImage = ClothesData::GetSelectedBeltImage();
 	if (beltImage != -1)
 	{
 		// Display Position

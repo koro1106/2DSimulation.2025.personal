@@ -19,7 +19,9 @@ PlayScene::PlayScene()
 	int exit = ImageManager::Get("exit");
 
 	buttons.emplace_back(1770, 530, 149, 148, "Title", setting); //タイトルに戻る
-	buttons.emplace_back(1590, 860, 280, 174, "Exit", exit);
+	buttons.emplace_back(1590, 860, 280, 174, "Exit", exit, []() { // リザルト画面
+		OverlayManager::ShowOverlay("RESULTCHECK");
+		});
 
 	buttons.emplace_back(20, 340, 379, 720, "Clothes", bg4Image, []() { // 装備画面 
 		OverlayManager::ShowOverlay("CLOTHES1");
@@ -57,7 +59,7 @@ void PlayScene::Update()
 		{
 			if (button.IsMouseOver(mouseX, mouseY))
 			{
-				//Click Only
+				//クリックした瞬間だけ
 				if (isMousePressed && !prevButton)
 				{
 					button.OnClick();

@@ -3,7 +3,7 @@
 #include "ClothesData.h"
 #include "OverlayManager.h"
 #include "EquipmentsCSVManager.h"
-
+#include "ButtonPosCSVManager.h"
 
 ClothesScene3::ClothesScene3()
 {
@@ -19,39 +19,44 @@ ClothesScene3::ClothesScene3()
 	int bracers5 = ImageManager::Get("Bracers5");
 
 	// Overwrite button
-	buttons.emplace_back(ClothesData::clothes_1ButtonX, ClothesData::clothesButtonY, 100, 100, "Bracers_1", bracers1, [this]() {
-		ClothesData::SetSelectedBracers(ImageManager::Get("Bracers1"));// 装備中の装備画像セット
+	auto [x1, y1] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_1);
+	buttons.emplace_back(x1, y1, 100, 100, "Bracers_1", bracers1, []() {
+		ClothesData::SetSelectedBracers("bracers1",ImageManager::Get("Bracers1"));// 装備中の装備画像セット
 		ClothesData::SetSelectedEquipmentID("bracers1");// 装備IDセット
 		ClothesData::UpdateScoreAndExplanation("bracers1");
 		});
-	buttons.emplace_back(ClothesData::clothes_2ButtonX, ClothesData::clothesButtonY, 100, 100, "Bracers_2", bracers2, [this]() {
-		ClothesData::SetSelectedBracers(ImageManager::Get("Bracers2"));
+	auto [x2, y2] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_2);
+	buttons.emplace_back(x2, y2, 100, 100, "Bracers_2", bracers2, []() {
+		ClothesData::SetSelectedBracers("bracers2",ImageManager::Get("Bracers2"));
 		ClothesData::SetSelectedEquipmentID("bracers2");
 		ClothesData::UpdateScoreAndExplanation("bracers2");
 		});
-	buttons.emplace_back(ClothesData::clothes_3ButtonX, ClothesData::clothesButtonY, 100, 100, "Bracers_3", bracers3, [this]() {
-		ClothesData::SetSelectedBracers(ImageManager::Get("Bracers3"));
+	auto [x3, y3] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_3);
+	buttons.emplace_back(x3, y3, 100, 100, "Bracers_3", bracers3, []() {
+		ClothesData::SetSelectedBracers("bracers3",ImageManager::Get("Bracers3"));
 		ClothesData::SetSelectedEquipmentID("bracers3");
 		ClothesData::UpdateScoreAndExplanation("bracers3");
 		});
-	buttons.emplace_back(ClothesData::clothes_4ButtonX, ClothesData::clothesButtonY, 100, 100, "Bracers_4", bracers4, [this]() {
-		ClothesData::SetSelectedBracers(ImageManager::Get("Bracers4"));
+	auto [x4, y4] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_4);
+	buttons.emplace_back(x4, y4, 100, 100, "Bracers_4", bracers4, []() {
+		ClothesData::SetSelectedBracers("bracers4",ImageManager::Get("Bracers4"));
 		ClothesData::SetSelectedEquipmentID("bracers4");
 		ClothesData::UpdateScoreAndExplanation("bracers4");
 		});
-	buttons.emplace_back(ClothesData::clothes_5ButtonX, ClothesData::clothesButtonY, 100, 100, "Bracers_5", bracers5, [this]() {
-		ClothesData::SetSelectedBracers(ImageManager::Get("Bracers5"));
+	auto [x5, y5] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_5);
+	buttons.emplace_back(x5, y5, 100, 100, "Bracers_5", bracers5, []() {
+		ClothesData::SetSelectedBracers("bracers5",ImageManager::Get("Bracers5"));
 		ClothesData::SetSelectedEquipmentID("bracers5");
 		ClothesData::UpdateScoreAndExplanation("bracers5");
 		});
 
-	buttons.emplace_back(ClothesData::sceneBackButtonX, ClothesData::sceneBackButtonY, 120, 93, "SceneBack", clothesBack, []() {
+	buttons.emplace_back(ButtonPosCSVManager::pos.sceneBackButtonX, ButtonPosCSVManager::pos.sceneBackButtonY, 120, 93, "SceneBack", clothesBack, []() {
 		OverlayManager::HideOverlay();
 		});
-	buttons.emplace_back(ClothesData::backButtonX, ClothesData::backNextbuttonY, 150, 150, "Back", back, []() {
+	buttons.emplace_back(ButtonPosCSVManager::pos.backButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Back", back, []() {
 		OverlayManager::ShowOverlay("CLOTHES2");
 		});
-	buttons.emplace_back(ClothesData::nextButtonX, ClothesData::backNextbuttonY, 150, 150, "Next", next, []() {
+	buttons.emplace_back(ButtonPosCSVManager::pos.nextButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Next", next, []() {
 		OverlayManager::ShowOverlay("CLOTHES4");
 		});
 
@@ -81,7 +86,7 @@ void ClothesScene3::Draw()
 		button.Draw();
 	}
 
-	int bracersImage = ClothesData::GetSelectedBracers();
+	int bracersImage = ClothesData::GetSelectedBracersImage();
 	if (bracersImage != -1)
 	{
 		// Display Position

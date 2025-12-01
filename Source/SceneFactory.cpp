@@ -11,6 +11,7 @@
 #include "ClothesScene2.h"
 #include "ClothesScene3.h"
 #include "ClothesScene4.h"
+#include "ResultScene.h"
 
 SceneBase* SceneFactory::CreateFirst()
 {

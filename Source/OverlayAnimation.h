@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "ImageManager.h"
+#include <functional>
 class OverlayPart
 {
 public:
@@ -10,14 +11,16 @@ public:
 	float targetX, targetY;   // 目標位置
 	float speed;
 	bool finished;
-	
+
 	//初期化
 	OverlayPart(int id, float stX, float stY, float tX, float tY, float spd)
 		:imageID(id),startX(stX),startY(stY),currentX(stX),currentY(stY),targetX(tX), targetY(tY),speed(spd),finished(false){ }
 	
 	void Update();
 	void Draw();
+
 };
+
 class OverlayAnimation {
 public:
 	OverlayPart backGround; // 背景のアニメーション

@@ -15,13 +15,13 @@ bool Button::IsMouseOver(int mouseX, int mouseY) const
 
 void Button::OnClick() const
 {
-	if (onClickFunc) 
+	if (onClickFunc) // もし関数がセットされていれば
 	{
-		onClickFunc();
+		onClickFunc(); // その関数呼ぶ
 	}
 	else
 	{
-		//SceneChange
+		//CSVにしたがってシーン変える
 		std::string currentScene = SceneManager::GetCurrentSceneName();
 		std::string nextScene = CSVManager::GetNextScene(currentScene, this->buttonID);
 		if (!nextScene.empty()) 
@@ -49,15 +49,16 @@ void Button::ButtonSystem(std::vector<Button>& buttons)
 	//Button
 	for (auto& button : buttons)
 	{
+		// マウスがボタンの上にあるか
 		if (button.IsMouseOver(mouseX, mouseY))
 		{
-			//Click Only
+			//　押された瞬間だけクリック扱い
 			if (isMousePressed && !prevButton)
 			{
 				button.OnClick();
 			}
 		}
 	}
-	//Save the previous input
+	//　前の状態記録
 	prevButton = isMousePressed;
 }

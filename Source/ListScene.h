@@ -12,4 +12,5 @@ public:
 	void Draw() override;
 private:
 	std::vector<Button> buttons;
+	int fontHandl;
 };

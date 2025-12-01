@@ -5,6 +5,7 @@
 #include "EquipmentsCSVManager.h"
 #include <iostream>
 #include "OverlayAnimation.h"
+#include "ButtonPosCSVManager.h"
 
 ClothesScene1::ClothesScene1()
 {
@@ -20,42 +21,48 @@ ClothesScene1::ClothesScene1()
 	int body5 = ImageManager::Get("BodyArmor5");
 
 	// Overwrite button
-	//[this] をキャプチャに入れることで、ラムダ内から scoreText にアクセスできる
-	
-	buttons.emplace_back(ClothesData::clothes_1ButtonX, ClothesData::clothesButtonY, 100, 100, "Armor_1", body1, [this]() {
-		ClothesData::SetSelectedArmor(ImageManager::Get("BodyArmor1"));// 装備中の装備画像セット
+	//[this]入れることで,ラムダ内からscoreTextとかアクセスできるが
+	//staticなのでインスタンス不要->[this]いらない
+	// emplace_backでコピーしないでそのまま引数渡すだけでOK
+	auto [x1, y1] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_1);
+	buttons.emplace_back(x1,y1,100,100, "Armor_1", body1, []() {
+		ClothesData::SetSelectedArmor("body1", ImageManager::Get("BodyArmor1"));// 装備中の装備画像セット
 		ClothesData::SetSelectedEquipmentID("body1");// 装備IDセット
 		ClothesData::UpdateScoreAndExplanation("body1");
 		});
-	buttons.emplace_back(ClothesData::clothes_2ButtonX, ClothesData::clothesButtonY, 100, 100, "Armor_2", body2, [this]() {
-		ClothesData::SetSelectedArmor(ImageManager::Get("BodyArmor2"));
+	auto [x2, y2] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_2);
+	buttons.emplace_back(x2,y2,100,100, "Armor_2", body2, []() {
+		ClothesData::SetSelectedArmor("body2",ImageManager::Get("BodyArmor2"));
 		ClothesData::SetSelectedEquipmentID("body2");
 		ClothesData::UpdateScoreAndExplanation("body2");
 		});
-	buttons.emplace_back(ClothesData::clothes_3ButtonX, ClothesData::clothesButtonY, 100, 100, "Armor_3", body3, [this]() {
-		ClothesData::SetSelectedArmor(ImageManager::Get("BodyArmor3"));
+	auto [x3, y3] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_3);
+	buttons.emplace_back(x3, y3, 100, 100, "Armor_3", body3, []() {
+		ClothesData::SetSelectedArmor("body3",ImageManager::Get("BodyArmor3"));
 		ClothesData::SetSelectedEquipmentID("body3");
 		ClothesData::UpdateScoreAndExplanation("body3");
 		});
-	buttons.emplace_back(ClothesData::clothes_4ButtonX, ClothesData::clothesButtonY, 100, 100, "Armor_4", body4, [this]() {
-		ClothesData::SetSelectedArmor(ImageManager::Get("BodyArmor4"));
+	auto [x4, y4] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_4);
+	buttons.emplace_back(x4, y4, 100, 100, "Armor_4", body4, []() {
+		ClothesData::SetSelectedArmor("body4",ImageManager::Get("BodyArmor4"));
 		ClothesData::SetSelectedEquipmentID("body4");
 		ClothesData::UpdateScoreAndExplanation("body4");
 		});
-	buttons.emplace_back(ClothesData::clothes_5ButtonX, ClothesData::clothesButtonY, 100, 100, "Armor_5", body5, [this]() {
-		ClothesData::SetSelectedArmor(ImageManager::Get("BodyArmor5"));
+	auto [x5, y5] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_5);
+	buttons.emplace_back(x5, y5, 100, 100, "Armor_5", body5, []() {
+		ClothesData::SetSelectedArmor("body5",ImageManager::Get("BodyArmor5"));
 		ClothesData::SetSelectedEquipmentID("body5");
 		ClothesData::UpdateScoreAndExplanation("body5");
 		});
 
 
-	buttons.emplace_back(ClothesData::sceneBackButtonX, ClothesData::sceneBackButtonY, 120, 93, "SceneBack", clothesBack, []() {
+	buttons.emplace_back(ButtonPosCSVManager::pos.sceneBackButtonX, ButtonPosCSVManager::pos.sceneBackButtonY, 120, 93, "SceneBack", clothesBack, []() {
 		OverlayManager::HideOverlay();
 		});
-	buttons.emplace_back(ClothesData::backButtonX, ClothesData::backNextbuttonY, 150, 150, "Back", back, []() {
+	buttons.emplace_back(ButtonPosCSVManager::pos.backButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Back", back, []() {
 		OverlayManager::ShowOverlay("CLOTHES4");
 		});
-	buttons.emplace_back(ClothesData::nextButtonX, ClothesData::backNextbuttonY, 150, 150, "Next", next, []() {
+	buttons.emplace_back(ButtonPosCSVManager::pos.nextButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Next", next, []() {
 		OverlayManager::ShowOverlay("CLOTHES2");
 		});
 
@@ -71,7 +78,6 @@ ClothesScene1::~ClothesScene1()
 
 void ClothesScene1::Update()
 {
-
 	if (OverlayManager::isOverlayVisible)
 	{
 		// 初回だけ初期化
@@ -100,7 +106,6 @@ void ClothesScene1::Update()
 
 void ClothesScene1::Draw()
 {
-	// 通常の背景描画
 
 	//　オーバーレイしたとき画面表示アニメーション
 	if (OverlayManager::isOverlayVisible)
@@ -116,14 +121,13 @@ void ClothesScene1::Draw()
 		}
 	}
 	
-	
 	//　ボタン描画
 	for (const auto& button : buttons)
 	{
 		button.Draw();
 	}
 
-	int armorImage = ClothesData::GetSelectedArmor();
+	int armorImage = ClothesData::GetSelectedArmorImage();
 	if (armorImage != -1)
 	{
 		// Display Position
@@ -136,7 +140,6 @@ void ClothesScene1::Draw()
 	//装備の説明表示
 	DrawFormatStringToHandle(1450, 500, GetColor(255, 255, 255),fontHandl, "%s", ClothesData::scoreText.c_str());
 	DrawFormatStringToHandle(1450, 540, GetColor(255, 255, 255),fontHandl, "%s", ClothesData::explanationText.c_str());
-	//DrawFormatString(1500, 500, GetColor(255, 255, 255), "%s", ClothesData::scoreText.c_str());
-	//DrawFormatString(1500, 540, GetColor(255, 255, 255), "%s", ClothesData::explanationText.c_str());
+	
 }
 

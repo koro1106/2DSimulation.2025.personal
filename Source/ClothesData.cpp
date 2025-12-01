@@ -2,63 +2,97 @@
 #include "EquipmentsCSVManager.h"
 #include <string>
 
+// 画像ID
 int ClothesData::selectedArmorId = -1;
 int ClothesData::selectedBeltId = -1;
 int ClothesData::selectedBracersId = -1;
 int ClothesData::selectedBootsId = -1;
 
-std::string ClothesData::selectedEquipmentID = "";
+// 装備ID（CSV参照用）
+std::string ClothesData::armorID = "";
+std::string ClothesData::beltID = "";
+std::string ClothesData::bracersID = "";
+std::string ClothesData::bootsID = "";
+
 std::string ClothesData::scoreText = "";
 std::string ClothesData::explanationText = "";
 
+std::string ClothesData::selectedEquipmentID = "";
+
+//セッター（画像ID＋装備ID を登録）
 // Armor
-void ClothesData::SetSelectedArmor(int imageId)
+void ClothesData::SetSelectedArmor(const std::string& id, int imageId)
 {
 	selectedArmorId = imageId;
+	armorID = id;
 }
-
-int ClothesData::GetSelectedArmor()
-{
-	return selectedArmorId;
-}
-
 // Belt
-void ClothesData::SetSelectedBelt(int imageId)
+void ClothesData::SetSelectedBelt(const std::string& id, int imageId)
 {
 	selectedBeltId = imageId;
+	beltID = id;
 }
-
-int ClothesData::GetSelectedBelt()
-{
-	return selectedBeltId;
-}
-
 // Bracers
-void ClothesData::SetSelectedBracers(int imageId)
+void ClothesData::SetSelectedBracers(const std::string& id, int imageId)
 {
 	selectedBracersId = imageId;
+	bracersID = id;
 }
-
-int ClothesData::GetSelectedBracers()
-{
-	return selectedBracersId;
-}
-
 // Boots
-void ClothesData::SetSelectedBoots(int imageId)
+void ClothesData::SetSelectedBoots(const std::string& id, int imageId)
 {
 	selectedBootsId = imageId;
+	bootsID = id;
 }
 
-int ClothesData::GetSelectedBoots()
+void ClothesData::SetSelectedEquipmentID(const std::string& id)
 {
-	return selectedBootsId;
+	selectedEquipmentID = id;
 }
 
-// 装備のIDセットする
-void ClothesData::SetSelectedEquipmentID(const std::string& path)
+// スコア取得
+int ClothesData::GetSelectedArmorScore()
 {
-	selectedEquipmentID = path;
+	auto e = EquipmentCSVManager::GetEquipmentByID(armorID);
+	return (e ? e->score : 0); // eにスコア入ってたらスコア入れるそうでなくれば０
+}
+
+int ClothesData::GetSelectedArmorImage()
+{
+	return selectedArmorId; // 選択中の画像取得
+}
+
+int ClothesData::GetSelectedBeltScore()
+{
+	auto e = EquipmentCSVManager::GetEquipmentByID(beltID);
+	return (e ? e->score : 0);
+}
+
+int ClothesData::GetSelectedBeltImage()
+{
+    return 	selectedBeltId; // 選択中の画像取得
+}
+
+int ClothesData::GetSelectedBracersScore()
+{
+	auto e = EquipmentCSVManager::GetEquipmentByID(bracersID);
+	return (e ? e->score : 0);
+}
+
+int ClothesData::GetSelectedBracersImage()
+{
+	return selectedBracersId; // 選択中の画像取得
+}
+
+int ClothesData::GetSelectedBootsScore()
+{
+	auto e = EquipmentCSVManager::GetEquipmentByID(bootsID);
+	return (e ? e->score : 0);
+}
+
+int ClothesData::GetSelectedBootsImage()
+{
+	return selectedBootsId; // 選択中の画像取得
 }
 
 const std::string& ClothesData::GetSelectedEquipmentID()
@@ -84,4 +118,29 @@ void ClothesData::UpdateScoreAndExplanation(const std::string& equipmentID)
 			explanationText = "説明：見つからない";
 		}
 	}
+}
+
+// 装備中のスコア
+int ClothesData::GetArmorScore()
+{
+	auto e = EquipmentCSVManager::GetEquipmentByID(armorID);
+	return e ? e->score : 0;
+}
+
+int ClothesData::GetBeltScore()
+{
+	auto e = EquipmentCSVManager::GetEquipmentByID(beltID);
+	return e ? e->score : 0;
+}
+
+int ClothesData::GetBracersScore()
+{
+	auto e = EquipmentCSVManager::GetEquipmentByID(bracersID);
+	return e ? e->score : 0;
+}
+
+int ClothesData::GetBootsScore()
+{
+	auto e = EquipmentCSVManager::GetEquipmentByID(bootsID);
+	return e ? e->score : 0;
 }

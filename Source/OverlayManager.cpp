@@ -10,6 +10,9 @@ ClothesScene3 OverlayManager::clothes3_Overlay;
 ClothesScene4 OverlayManager::clothes4_Overlay;
 ListScene OverlayManager::listScene_Overlay;
 ManualScene OverlayManager::manualScene_Overlay;
+ResultScene OverlayManager::resultScene_Overlay;
+ResultCheck OverlayManager::resultCheck_Overlay;
+
 std::string OverlayManager::currentOverlay = ""; 
 
 void OverlayManager::ShowOverlay(const std::string& overlayName)
@@ -46,6 +49,12 @@ void OverlayManager::ShowOverlay(const std::string& overlayName)
 	}
 	if (overlayName == "MANUAL") {
 		manualScene_Overlay = ManualScene();
+	}
+	if (overlayName == "RESULT") {
+		resultScene_Overlay = ResultScene();
+	}
+	if (overlayName == "RESULTCHECK") {
+		resultCheck_Overlay = ResultCheck();
 	}
 }
 
@@ -84,6 +93,14 @@ void OverlayManager::Update()
 	{
 		manualScene_Overlay.Update();
 	}
+	if (currentOverlay == "RESULT")
+	{
+		resultScene_Overlay.Update();
+	}
+	if (currentOverlay == "RESULTCHECK")
+	{
+		resultCheck_Overlay.Update();
+	}
 }
 void OverlayManager::Draw()
 {
@@ -117,5 +134,13 @@ void OverlayManager::Draw()
 	if (currentOverlay == "MANUAL")
 	{
 		manualScene_Overlay.Draw();
+	}
+	if (currentOverlay == "RESULT")
+	{
+		resultScene_Overlay.Draw();
+	}
+	if (currentOverlay == "RESULTCHECK")
+	{
+		resultCheck_Overlay.Draw();
 	}
 }

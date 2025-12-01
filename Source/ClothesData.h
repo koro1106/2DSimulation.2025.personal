@@ -5,48 +5,48 @@
 class ClothesData
 {
 public:
+	// 選択中の装備画像ID
 	static int selectedArmorId;
 	static int selectedBeltId;
 	static int selectedBracersId;
 	static int selectedBootsId;
 
-	// ClothesScene Button ImagePosition
-	static const int backButtonX = 260;
-	static const int backNextbuttonY = 845;
-	static const int nextButtonX = 915;
-
-	static const int sceneBackButtonX = 30;
-	static const int sceneBackButtonY = 90;
-
-	static const int clothes_1ButtonX = 400;
-	static const int clothes_2ButtonX = 530;
-	static const int clothes_3ButtonX = 660;
-	static const int clothes_4ButtonX = 790;
-	static const int clothes_5ButtonX = 920;
-	static const int clothesButtonY = 560;
+	// 各装装備のID
+	static std::string armorID;
+	static std::string beltID;
+	static std::string bracersID;
+	static std::string bootsID;
 
 	// Armor
-	static void SetSelectedArmor(int imageId);
-	static int GetSelectedArmor();
+	static void SetSelectedArmor(const std::string& id, int imageId);
+	static int GetSelectedArmorScore();
+	static int GetSelectedArmorImage(); // 画像取得
 	// Belt
-	static void SetSelectedBelt(int imageId);
-	static int GetSelectedBelt();
+	static void SetSelectedBelt(const std::string& id, int imageId);
+	static int GetSelectedBeltScore();
+	static int GetSelectedBeltImage(); // 画像取得
 	// Bracers
-	static void SetSelectedBracers(int imageId);
-	static int GetSelectedBracers();
+	static void SetSelectedBracers(const std::string& id, int imageId);
+	static int GetSelectedBracersScore();
+	static int GetSelectedBracersImage(); // 画像取得
 	// Boots
-	static void SetSelectedBoots(int imageId);
-	static int GetSelectedBoots();
+	static void SetSelectedBoots(const std::string& id, int imageId);
+	static int GetSelectedBootsScore();
+	static int GetSelectedBootsImage(); // 画像取得
 	// Equipment ImageFilePath
-	static void SetSelectedEquipmentID(const std::string& path);
+	static void SetSelectedEquipmentID(const std::string& id);
 	static const std::string& GetSelectedEquipmentID();
 
-	static std::string selectedEquipmentID;
-
-	//Update Score and Explanation
+	//選択中の装備の説明
 	static void UpdateScoreAndExplanation(const std::string& equipmentID);
 	static std::string scoreText;
 	static std::string explanationText;
+
+	// 各装備スコアの取得
+	static int GetArmorScore();
+	static int GetBeltScore();
+	static int GetBracersScore();
+	static int GetBootsScore();
 
 	// UTF-8 → Shift-JIS変換関数
 	static std::string Utf8ToSjis(const std::string& src)
@@ -60,4 +60,6 @@ public:
 		WideCharToMultiByte(932, 0, wstr.c_str(), -1, &str[0], slen, NULL, NULL);
 		return str;
 	}
+
+	static std::string selectedEquipmentID;
 };

@@ -13,25 +13,25 @@ void EquipmentDrawer::DrawSelectedEquipment(EquipmentType type)
 	switch (type)
 	{
 	case EquipmentType::Armor:
-		img = ClothesData::GetSelectedArmor();
+		img = ClothesData::GetSelectedArmorImage();
 		drawY = 430;
 		dX = 1130;
 		dY = 255;
 		break;
 	case EquipmentType::Belt:
-		img = ClothesData::GetSelectedBelt();
+		img = ClothesData::GetSelectedBeltImage();
 		drawY = 580;
 		dX = 1160;
 		dY = 460;
 		break;
 	case EquipmentType::Bracers:
-		img = ClothesData::GetSelectedBracers();
+		img = ClothesData::GetSelectedBracersImage();
 		drawY = 730;
 		dX = 680;
 		dY = 370;
 		break;
 	case EquipmentType::Boot:
-		img = ClothesData::GetSelectedBoots();
+		img = ClothesData::GetSelectedBootsImage();
 		drawY = 870;
 		dX = 680;
 		dY = 650;

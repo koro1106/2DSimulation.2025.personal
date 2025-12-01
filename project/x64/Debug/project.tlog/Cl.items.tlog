@@ -13,6 +13,7 @@ D:\個人製作＿5\Library\SceneManager.cpp;D:\個人製作＿5\project\x64\Deb
 D:\個人製作＿5\Library\Time.cpp;D:\個人製作＿5\project\x64\Debug\Time.obj
 D:\個人製作＿5\Source\BootScene.cpp;D:\個人製作＿5\project\x64\Debug\BootScene.obj
 D:\個人製作＿5\Source\Button.cpp;D:\個人製作＿5\project\x64\Debug\Button.obj
+D:\個人製作＿5\Source\ButtonPosCSVManager.cpp;D:\個人製作＿5\project\x64\Debug\ButtonPosCSVManager.obj
 D:\個人製作＿5\Source\CautionScene.cpp;D:\個人製作＿5\project\x64\Debug\CautionScene.obj
 D:\個人製作＿5\Source\ClothesData.cpp;D:\個人製作＿5\project\x64\Debug\ClothesData.obj
 D:\個人製作＿5\Source\ClothesScene1.cpp;D:\個人製作＿5\project\x64\Debug\ClothesScene1.obj
@@ -29,5 +30,9 @@ D:\個人製作＿5\Source\ManualScene.cpp;D:\個人製作＿5\project\x64\Debug
 D:\個人製作＿5\Source\OverlayAnimation.cpp;D:\個人製作＿5\project\x64\Debug\OverlayAnimation.obj
 D:\個人製作＿5\Source\OverlayManager.cpp;D:\個人製作＿5\project\x64\Debug\OverlayManager.obj
 D:\個人製作＿5\Source\PlayScene.cpp;D:\個人製作＿5\project\x64\Debug\PlayScene.obj
+D:\個人製作＿5\Source\ResultCheck.cpp;D:\個人製作＿5\project\x64\Debug\ResultCheck.obj
+D:\個人製作＿5\Source\ResultCSVManager.cpp;D:\個人製作＿5\project\x64\Debug\ResultCSVManager.obj
+D:\個人製作＿5\Source\ResultScene.cpp;D:\個人製作＿5\project\x64\Debug\ResultScene.obj
 D:\個人製作＿5\Source\SceneFactory.cpp;D:\個人製作＿5\project\x64\Debug\SceneFactory.obj
 D:\個人製作＿5\Source\TitleScene.cpp;D:\個人製作＿5\project\x64\Debug\TitleScene.obj
+D:\個人製作＿5\Source\OrdersCSVManager.cpp;D:\個人製作＿5\project\x64\Debug\OrdersCSVManager.obj

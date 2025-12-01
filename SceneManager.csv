@@ -4,10 +4,10 @@ PLAY,Manual,MANUAL,overlay
 PLAY,Caution,CAUTION,overlay
 PLAY,Clothes,CLOTHES1,overlay
 PLAY,Title,TITLE,switch
-PLAY,Exit,RESULT,overlay
-LIST,Back,PLAY,overlay
-MANUAL,Back,PLAY,overlay
-CAUTION,Back,PLAY,overlay
+PLAY,Exit,RESULTCHECK,overlay
+LIST,SceneBack,PLAY,overlay
+MANUAL,SceneBack,PLAY,overlay
+CAUTION,SceneBack,PLAY,overlay
 CLOTHES1,SceneBack,PLAY,overlay
 CLOTHES1,Back,CLOTHES4,overlay
 CLOTHES1,Next,CLOTHES2,overlay
@@ -20,3 +20,6 @@ CLOTHES3,Next,CLOTHES4,overlay
 CLOTHES4,SceneBack,PLAY,overlay
 CLOTHES4,Back,CLOTHES3,overlay
 CLOTHES4,Next,CLOTHES1,overlay
+RESULTCHECK,SceneBack,PLAY,overlay
+RESULTCHECK,Yes,RESULT,overlay
+RESULT,,,

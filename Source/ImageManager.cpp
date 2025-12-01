@@ -4,7 +4,11 @@ std::map<std::string, int> ImageManager::images;
 
 void ImageManager::LoadAll()
 {
-    images["back"] = LoadGraph("data/image/Art/back.png");
+    // TitleScene
+    images["titleBG"] = LoadGraph("data/image/Art/title.png");
+    images["gear1"] = LoadGraph("data/image/Art/t33.png"); // ¬‚³‚¢•Ô
+    images["gear2"] = LoadGraph("data/image/Art/t34.png"); // ‘å‚«‚¢•Ô
+
     //TextImage
     images["listText"] = LoadGraph("data/image/Art/listText.png");
     images["titleText"] = LoadGraph("data/image/Art/titleText.png");
@@ -19,6 +23,7 @@ void ImageManager::LoadAll()
     images["optionBG"] = LoadGraph("data/image/Art/t25.png");
 
     //PlaySceneUI
+    images["back"] = LoadGraph("data/image/Art/back.png");
     images["cursor"] = LoadGraph("data/image/Art/cursor.png"); // ƒJ[ƒ\ƒ‹‰æ‘œ
     images["exit"] = LoadGraph("data/image/Art/exit.png");
     images["list"] = LoadGraph("data/image/Art/list.png");
@@ -73,6 +78,16 @@ void ImageManager::LoadAll()
 
     //ListScene
     images["listBg"] = LoadGraph("data/image/Art/ListScene.png");
+
+    //ResultScene
+    images["result_S"] = LoadGraph("data/image/Art/S.png");
+    images["result_A"] = LoadGraph("data/image/Art/A.png");
+    images["result_B"] = LoadGraph("data/image/Art/B.png");
+    images["result_C"] = LoadGraph("data/image/Art/C.png");
+    images["result_D"] = LoadGraph("data/image/Art/D.png");
+    // ResultCheckScene
+    images["checkBG"] = LoadGraph("data/image/Art/t30.png");
+    images["yes"] = LoadGraph("data/image/Art/yes.png");
 }
 
 int ImageManager::Get(const std::string& name)

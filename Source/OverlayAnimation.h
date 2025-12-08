@@ -18,7 +18,6 @@ public:
 	
 	void Update();
 	void Draw();
-
 };
 
 class OverlayAnimation {
@@ -41,5 +40,4 @@ public:
 	void AddPart(int imageHandle, float stX, float stY, float tX, float tY, float speed) {
 		parts.push_back(OverlayPart(imageHandle, stX, stY, tX, tY, speed));// (画像、初期位置、目標位置、スピード)
 	}
-
 };

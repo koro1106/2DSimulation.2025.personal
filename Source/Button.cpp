@@ -5,7 +5,12 @@
 #include "OverlayAnimation.h"
 
 Button::Button(int x, int y, int width, int height, const std::string& buttonID, int imageHandle,const std::function<void()> onClick)
-	: x(x), y(y), width(width), height(height), buttonID(buttonID), imageHandle(imageHandle), onClickFunc(onClick) {}
+	: x(x), y(y), width(width), height(height), buttonID(buttonID), imageHandle(imageHandle), onClickFunc(onClick) 
+{
+	// アニメーションの最終位置（本来の位置）記録
+	originalX = x;
+	originalY = y;
+}
 
 bool Button::IsMouseOver(int mouseX, int mouseY) const
 {
@@ -62,3 +67,37 @@ void Button::ButtonSystem(std::vector<Button>& buttons)
 	//　前の状態記録
 	prevButton = isMousePressed;
 }
+// アニメーション開始
+void Button::SetAnimation(float tx, float ty, float speed)
+{
+	targetX = tx;
+	targetY = ty;
+	animSpeed = speed;
+	animFinished = false;
+}
+// アニメーション更新
+void Button::UpdateAnimation()
+{
+	if (animFinished) return;
+
+	x += (targetX - x) * animSpeed;
+	y += (targetY - y) * animSpeed;
+
+	if (fabs(targetX - x) < 1 && fabs(targetY - y) < 1)
+	{
+		x = targetX;
+		y = targetY;
+		animFinished = true; //アニメーション終了
+	}
+}
+
+// アニメーションする際の最初のY座標
+void Button::SetAnimationStart(float startY)
+{
+	y = startY;             // 初期位置を強制セット
+	targetX = originalX;
+	targetY = originalY;
+	animSpeed = 0.4f;
+	animFinished = false;
+}
+

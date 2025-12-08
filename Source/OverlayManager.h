@@ -8,6 +8,7 @@
 #include "ManualScene.h"
 #include "ResultScene.h"
 #include "ResultCheck.h"
+#include "TitleCheck.h"
 #include "DxLib.h"
 class OverlayManager 
 {
@@ -21,6 +22,7 @@ public:
 	static ManualScene manualScene_Overlay; 
 	static ResultScene resultScene_Overlay; 
 	static ResultCheck resultCheck_Overlay;
+	static TitleCheck titleCheck_Overlay;
 
 	static bool isOverlayVisible; // オーバーレイフラグ
 	static bool overlayJustOpened; // 初回再生判定フラグ

@@ -1,6 +1,7 @@
 #include "TitleScene.h"
 #include "ImageManager.h"
 #include "DxLib.h"
+#include "OverlayManager.h"
 
 TitleScene::TitleScene()
 {
@@ -28,6 +29,7 @@ void TitleScene::Update()
 	//クリックした瞬間だけ
 	if (isMousePressed && !prevButton)
 	{
+		OverlayManager::HideOverlay();
 		SceneManager::ChangeScene("PLAY");
 	}
 	//前の入力を保存
@@ -37,7 +39,6 @@ void TitleScene::Update()
 		SceneManager::Exit();
 	}
 }
-
 
 void TitleScene::Draw()
 {

@@ -33,11 +33,13 @@ void ImageManager::LoadAll()
     images["human"] = LoadGraph("data/image/Art/human.png");
     images["h1"] = LoadGraph("data/image/Art/h1.png");
     images["meter"] = LoadGraph("data/image/Art/meter.png");
-
-    images["namePlate"] = LoadGraph("data/image/Art/t17.png");
+    images["clothesTitle"] = LoadGraph("data/image/Art/clothesTitle.png");
+    images["time"] = LoadGraph("data/image/Art/time.png");
 
     //ListScene
-    images["listScene"] = LoadGraph("data/image/Art/ListScene.png");
+    images["listBG"] = LoadGraph("data/image/Art/listBG.png");
+    // ManualScene
+    images["manualBG"] = LoadGraph("data/image/Art/manualBG.png");
   //‘•”õ
     //BodyArmor
     images["BodyArmor1"] = LoadGraph("data/image/Icons/BodyArmor/BodyArmor_1.png");
@@ -71,13 +73,8 @@ void ImageManager::LoadAll()
     images["equipment3"] = LoadGraph("data/image/Art/equipment3.png");
     images["equipment4"] = LoadGraph("data/image/Art/equipment4.png");
 
-
     images["+1"] = LoadGraph("data/image/Art/+1.png");// next
     images["-1"] = LoadGraph("data/image/Art/-1.png");// back
-
-
-    //ListScene
-    images["listBg"] = LoadGraph("data/image/Art/ListScene.png");
 
     //ResultScene
     images["result_S"] = LoadGraph("data/image/Art/S.png");
@@ -85,6 +82,8 @@ void ImageManager::LoadAll()
     images["result_B"] = LoadGraph("data/image/Art/B.png");
     images["result_C"] = LoadGraph("data/image/Art/C.png");
     images["result_D"] = LoadGraph("data/image/Art/D.png");
+    images["scoreBG"] = LoadGraph("data/image/Art/t38.png");
+
     // ResultCheckScene
     images["checkBG"] = LoadGraph("data/image/Art/t30.png");
     images["yes"] = LoadGraph("data/image/Art/yes.png");

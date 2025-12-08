@@ -1,7 +1,8 @@
 #pragma once
-#include <string>
 #include <vector>
 #include <functional>
+#include <string> 
+#include <cmath>    // fabs()用
 
 class Button
 {
@@ -11,10 +12,18 @@ public:
 	void OnClick()const;
 	void Draw()const;
 	static void ButtonSystem(std::vector<Button>& buttons);
+	void SetAnimation(float tx, float ty, float speed = 0.5f);
+	void UpdateAnimation();
+	void SetAnimationStart(float startY);
+	bool animFinished;
 private:
 	int x, y;
 	int width, height;
 	std::string buttonID;
 	int imageHandle; // ボタンの画像ハンドル
 	std::function<void()>onClickFunc; //ボタンがクリックされたときに実行される関数(関数を格納できる変数)
+	// アニメーション用
+	int targetX, targetY;
+	int  originalX, originalY;
+	float animSpeed ;
 };

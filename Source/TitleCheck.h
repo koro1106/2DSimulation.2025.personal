@@ -1,11 +1,13 @@
 #pragma once
 #include "Button.h"
-
-class ResultCheck
+/// <summary>
+/// タイトルに戻る際の確認ウィンドウクラス
+/// </summary>
+class TitleCheck
 {
 public:
-	ResultCheck();
-	~ResultCheck();
+	TitleCheck();
+	~TitleCheck();
 	void Update();
 	void Draw();
 private:

@@ -6,7 +6,7 @@
 
 ResultScene::ResultScene()
 {
-	
+
 }
 
 ResultScene::~ResultScene()
@@ -37,11 +37,11 @@ void ResultScene::Draw()
 	// ƒ‰ƒ“ƒN‚É‰ž‚¶‚Ä‰æ‘œ•\Ž¦
 	if (rank == "S")
 		DrawGraph(600, 500, ImageManager::Get("result_S"), TRUE);
-	else if(rank == "A")
+	else if (rank == "A")
 		DrawGraph(600, 500, ImageManager::Get("result_A"), TRUE);
-	else if(rank == "B")
+	else if (rank == "B")
 		DrawGraph(600, 500, ImageManager::Get("result_B"), TRUE);
-	else if(rank == "C")
+	else if (rank == "C")
 		DrawGraph(600, 500, ImageManager::Get("result_C"), TRUE);
 }
 

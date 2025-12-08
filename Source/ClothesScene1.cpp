@@ -25,13 +25,13 @@ ClothesScene1::ClothesScene1()
 	//staticなのでインスタンス不要->[this]いらない
 	// emplace_backでコピーしないでそのまま引数渡すだけでOK
 	auto [x1, y1] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_1);
-	buttons.emplace_back(x1,y1,100,100, "Armor_1", body1, []() {
+	buttons.emplace_back(x1, y1, 100,100, "Armor_1", body1, []() {
 		ClothesData::SetSelectedArmor("body1", ImageManager::Get("BodyArmor1"));// 装備中の装備画像セット
 		ClothesData::SetSelectedEquipmentID("body1");// 装備IDセット
 		ClothesData::UpdateScoreAndExplanation("body1");
 		});
 	auto [x2, y2] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_2);
-	buttons.emplace_back(x2,y2,100,100, "Armor_2", body2, []() {
+	buttons.emplace_back(x2, y2, 100,100, "Armor_2", body2, []() {
 		ClothesData::SetSelectedArmor("body2",ImageManager::Get("BodyArmor2"));
 		ClothesData::SetSelectedEquipmentID("body2");
 		ClothesData::UpdateScoreAndExplanation("body2");
@@ -80,24 +80,53 @@ void ClothesScene1::Update()
 {
 	if (OverlayManager::isOverlayVisible)
 	{
-		// 初回だけ初期化
+		// 初回のみアニメーション
 		if (OverlayManager::overlayJustOpened && !OverlayManager::playedAnimation)
 		{
-		    overlayAnim = OverlayAnimation(ImageManager::Get("equipment1")); // 初回のみ再生
-			// 各装備追加
-			overlayAnim.AddPart(ImageManager::Get("BodyArmor1"), 400, -720, 400, 560, 0.2f);
-			overlayAnim.AddPart(ImageManager::Get("BodyArmor2"), 530, -720, 530, 560, 0.2f);
-			overlayAnim.AddPart(ImageManager::Get("BodyArmor3"), 660, -720, 660, 560, 0.2f);
-			overlayAnim.AddPart(ImageManager::Get("BodyArmor4"), 790, -720, 790, 560, 0.2f);
-			overlayAnim.AddPart(ImageManager::Get("BodyArmor5"), 920, -720, 920, 560, 0.2f);
+			// 装備ボタンのYを全部-720に
+			for (auto& b : buttons)
+				b.SetAnimationStart(-720);
+
+			// 背景のアニメ開始
+			StartBackgroundAnimation(70, 125);
+	
+			// CSV の位置へ移動
+			auto [x1, y1] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_1);
+			auto [x2, y2] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_2);
+			auto [x3, y3] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_3);
+			auto [x4, y4] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_4);
+			auto [x5, y5] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_5);
 			
+			buttons[0].SetAnimation(x1, y1);
+			buttons[1].SetAnimation(x2, y2);
+			buttons[2].SetAnimation(x3, y3);
+			buttons[3].SetAnimation(x4, y4);
+			buttons[4].SetAnimation(x5, y5);
+
 			OverlayManager::overlayJustOpened = false;
-			OverlayManager::playedAnimation = true; // 再生済みフラグをセット
+			OverlayManager::playedAnimation = true;
 		}
-		// アニメーションがまだ終わってないなら進める
-		if (!overlayAnim.IsFinished())
+
+		// アニメーション処理
+		for (auto& btn : buttons)
+			btn.UpdateAnimation();
+
+		// 背景アニメーション
+		if (!bgAnimFinished)
 		{
-			overlayAnim.Update(); //アニメーション
+			bgY += (bgTargetY - bgY) * 0.4f;
+
+			// 終了判定
+			if ( fabs(bgTargetY - bgY) < 1)
+			{
+				bgY = bgTargetY;
+				bgAnimFinished = true;
+			}
+		}
+		else
+		{
+			// アニメ完了済みなら常にターゲット座標に固定
+			bgY = 125;
 		}
 	}
 
@@ -106,40 +135,32 @@ void ClothesScene1::Update()
 
 void ClothesScene1::Draw()
 {
-
-	//　オーバーレイしたとき画面表示アニメーション
-	if (OverlayManager::isOverlayVisible)
-	{
-		// アニメーション中
-		if (!overlayAnim.IsFinished())
-		{
-			overlayAnim.Draw(); // アニメーション描画
-		}
-		else
-		{
-			DrawGraph(70, 125, ImageManager::Get("equipment1"), TRUE);
-		}
-	}
+	DrawGraph((int)bgX, (int)bgY, ImageManager::Get("equipment1"), TRUE);
 	
-	//　ボタン描画
+	// ボタン描画
 	for (const auto& button : buttons)
 	{
 		button.Draw();
 	}
 
+	// 装備中の装備表示
 	int armorImage = ClothesData::GetSelectedArmorImage();
 	if (armorImage != -1)
 	{
-		// Display Position
-		int drawX = 240;
-		int drawY = 380;
-
-		DrawGraph(drawX, drawY, armorImage, TRUE);
+		DrawGraph(240, 380, armorImage, TRUE);
 	}
 
 	//装備の説明表示
 	DrawFormatStringToHandle(1450, 500, GetColor(255, 255, 255),fontHandl, "%s", ClothesData::scoreText.c_str());
 	DrawFormatStringToHandle(1450, 540, GetColor(255, 255, 255),fontHandl, "%s", ClothesData::explanationText.c_str());
 	
+}
+
+// 背景アニメーション
+void ClothesScene1::StartBackgroundAnimation(float tx, float ty)
+{
+	bgTargetX = tx;
+	bgTargetY = ty;
+	bgAnimFinished = false;
 }
 

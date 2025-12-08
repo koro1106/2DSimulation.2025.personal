@@ -3,7 +3,7 @@ PLAY,List,LIST,overlay
 PLAY,Manual,MANUAL,overlay
 PLAY,Caution,CAUTION,overlay
 PLAY,Clothes,CLOTHES1,overlay
-PLAY,Title,TITLE,switch
+PLAY,Title,TITLECHECK,overlay
 PLAY,Exit,RESULTCHECK,overlay
 LIST,SceneBack,PLAY,overlay
 MANUAL,SceneBack,PLAY,overlay
@@ -23,3 +23,5 @@ CLOTHES4,Next,CLOTHES1,overlay
 RESULTCHECK,SceneBack,PLAY,overlay
 RESULTCHECK,Yes,RESULT,overlay
 RESULT,,,
+TITLECHECK,SceneBack,PLAY,overlay
+PLAY,Yes,TITLE,switch

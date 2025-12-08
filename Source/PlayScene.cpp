@@ -18,8 +18,10 @@ PlayScene::PlayScene()
 	int setting = ImageManager::Get("setting");
 	int exit = ImageManager::Get("exit");
 
-	buttons.emplace_back(1770, 530, 149, 148, "Title", setting); //タイトルに戻る
-	buttons.emplace_back(1590, 860, 280, 174, "Exit", exit, []() { // リザルト画面
+	buttons.emplace_back(1770, 530, 149, 148, "Title", setting,[]() { // タイトル確認ウィンドウ
+		OverlayManager::ShowOverlay("TITLECHECK");
+		});
+	buttons.emplace_back(1590, 860, 280, 174, "Exit", exit, []() { // リザルト確認ウィンドウ
 		OverlayManager::ShowOverlay("RESULTCHECK");
 		});
 
@@ -76,9 +78,9 @@ void PlayScene::Draw()
 	DrawGraph(0, 0, ImageManager::Get("bg1"), TRUE);
 	DrawGraph(400, 20, ImageManager::Get("bg2"), TRUE);
 	DrawGraph(1670,20, ImageManager::Get("optionBG"), TRUE);
-	//DrawGraph(880, 240, ImageManager::Get("human"), TRUE);
 	DrawGraph(500, 60, ImageManager::Get("h1"), TRUE);
 	DrawGraph(1820, 170, ImageManager::Get("bgList"), TRUE);
+	DrawGraph(-80, 10, ImageManager::Get("time"), TRUE);
 	// TextImage
 	DrawGraph(1740, 100, ImageManager::Get("listText"), TRUE);
 	DrawGraph(1740, 305, ImageManager::Get("manualText"), TRUE);
@@ -95,7 +97,7 @@ void PlayScene::Draw()
 		button.Draw();
 	}
 
-	DrawGraph(60, 300, ImageManager::Get("namePlate"), TRUE);
+	DrawGraph(60, 300, ImageManager::Get("clothesTitle"), TRUE);
 
 	// 選択中の装備表示
 	EquipmentDrawer::DrawSelectedEquipment(EquipmentType::Armor);

@@ -12,6 +12,7 @@ ListScene OverlayManager::listScene_Overlay;
 ManualScene OverlayManager::manualScene_Overlay;
 ResultScene OverlayManager::resultScene_Overlay;
 ResultCheck OverlayManager::resultCheck_Overlay;
+TitleCheck OverlayManager::titleCheck_Overlay;
 
 std::string OverlayManager::currentOverlay = ""; 
 
@@ -56,6 +57,9 @@ void OverlayManager::ShowOverlay(const std::string& overlayName)
 	if (overlayName == "RESULTCHECK") {
 		resultCheck_Overlay = ResultCheck();
 	}
+	if (overlayName == "TITLECHECK") {
+		titleCheck_Overlay = TitleCheck();
+	}
 }
 
 void OverlayManager::HideOverlay()
@@ -65,6 +69,7 @@ void OverlayManager::HideOverlay()
 	overlayJustOpened = false; // ¡•Â‚¶‚Ä‚¢‚é‚Ì‚ÅuŠJ‚¢‚½’¼Œãv‚Å‚Í‚È‚¢
 	playedAnimation = false; // •Â‚¶‚½‚çŸ‰ñÄ¶‚Å‚«‚é‚æ‚¤‚Éfalse‚É‚·‚é
 }
+
 void OverlayManager::Update()
 {
 	if (!isOverlayVisible) return;
@@ -100,6 +105,9 @@ void OverlayManager::Update()
 	if (currentOverlay == "RESULTCHECK")
 	{
 		resultCheck_Overlay.Update();
+	}
+	if (currentOverlay == "TITLECHECK") {
+		titleCheck_Overlay.Update();
 	}
 }
 void OverlayManager::Draw()
@@ -142,5 +150,8 @@ void OverlayManager::Draw()
 	if (currentOverlay == "RESULTCHECK")
 	{
 		resultCheck_Overlay.Draw();
+	}
+	if (currentOverlay == "TITLECHECK") {
+		titleCheck_Overlay.Draw();
 	}
 }

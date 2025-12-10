@@ -1,6 +1,48 @@
-﻿  ResultCheck.cpp
+﻿  imgui.cpp
+  App.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  TitleCheck.cpp
+  main.cpp
+  ObjectManager.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  SceneManager.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  Time.cpp
+  BootScene.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  Button.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(73,12): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(74,12): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(83,21): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(84,21): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(97,6): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ButtonPosCSVManager.cpp
+  ClothesData.cpp
+  ClothesScene2.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  ClothesScene3.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  ClothesScene4.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  CSVManager.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  ManualScene.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  OverlayAnimation.cpp
+  PlayScene.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  ResultCheck.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  ResultCSVManager.cpp
+  SceneFactory.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
   コードを生成中...
-  project.vcxproj -> D:\個人製作＿5\x64\Debug\project.exe
+  コンパイル中...
+  TitleCheck.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  TitleScene.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  OrdersCSVManager.cpp
+  コードを生成中...
+  LINK : 前回のインクリメンタル リンクで C:\Users\student\Desktop\新しいフォルダー\x64\Debug\project.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  project.vcxproj -> C:\Users\student\Desktop\新しいフォルダー\x64\Debug\project.exe

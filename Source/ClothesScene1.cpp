@@ -97,6 +97,7 @@ void ClothesScene1::Update()
 			auto [x4, y4] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_4);
 			auto [x5, y5] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_5);
 			
+			// 装備５つをCSVの位置へアニメーションセット
 			buttons[0].SetAnimation(x1, y1);
 			buttons[1].SetAnimation(x2, y2);
 			buttons[2].SetAnimation(x3, y3);
@@ -114,13 +115,13 @@ void ClothesScene1::Update()
 		// 背景アニメーション
 		if (!bgAnimFinished)
 		{
-			bgY += (bgTargetY - bgY) * 0.4f;
+			bgY += (bgTargetY - bgY) * 0.6f;
 
 			// 終了判定
-			if ( fabs(bgTargetY - bgY) < 1)
+			if (fabsf(bgTargetY - bgY) < 1) // 目標位置にほぼ到達したら
 			{
 				bgY = bgTargetY;
-				bgAnimFinished = true;
+				bgAnimFinished = true; // アニメーション終了
 			}
 		}
 		else

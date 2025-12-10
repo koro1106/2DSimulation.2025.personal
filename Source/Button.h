@@ -12,7 +12,7 @@ public:
 	void OnClick()const;
 	void Draw()const;
 	static void ButtonSystem(std::vector<Button>& buttons);
-	void SetAnimation(float tx, float ty, float speed = 0.5f);
+	void SetAnimation(float tx, float ty, float speed = 0.4f);
 	void UpdateAnimation();
 	void SetAnimationStart(float startY);
 	bool animFinished;

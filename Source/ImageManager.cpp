@@ -85,7 +85,8 @@ void ImageManager::LoadAll()
     images["scoreBG"] = LoadGraph("data/image/Art/t38.png");
 
     // ResultCheckScene
-    images["checkBG"] = LoadGraph("data/image/Art/t30.png");
+    images["checkBG"] = LoadGraph("data/image/Art/t26.png");
+    images["checkEdge"] = LoadGraph("data/image/Art/t20.png");
     images["yes"] = LoadGraph("data/image/Art/yes.png");
 }
 

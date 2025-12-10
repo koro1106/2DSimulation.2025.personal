@@ -20,6 +20,9 @@ public:
 		: OrderNo(o), TotalDiff(t),Rank(r){}
     };
 
+	
+
+
 private:
 	int TotalDiff(const ResultCSVManager::ResultRow& row);
 	std::vector<DisplayResult> displayResult; // ŒvŽZ‚µ‚½Œ‹‰Êˆê——

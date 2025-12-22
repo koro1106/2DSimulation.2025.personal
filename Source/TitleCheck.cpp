@@ -12,7 +12,7 @@ TitleCheck::TitleCheck()
 		OverlayManager::HideOverlay();
 		});
 	buttons.emplace_back(810, 610, 217, 74, "Yes", yes, []() {
-		OverlayManager::ShowOverlay("RESULT");
+		SceneManager::ChangeScene("TITLE");
 		});
 	AddFontResourceEx("data/font/cinecaption226.ttf", FR_PRIVATE, NULL); // Windowsが一時的にフォント使えるようになる。インストール不要
 	fontHandl = CreateFontToHandle("しねきゃぷしょん", 45, 0);

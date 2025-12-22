@@ -17,4 +17,5 @@ public:
 	};
 
 	static std::vector<ResultRow> result;
+	static int currentOrderIndex; // ¡•\¦‚µ‚Ä‚éCSV‚Ìs
 };

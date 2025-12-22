@@ -57,7 +57,7 @@ void ResultCheck::Draw()
 		button.Draw();
 	}
 
-	DrawFormatStringToHandle(630, 450, GetColor(180, 180, 0), fontHandl, "%s", "本当にこの装備でいいですか？");
+	DrawFormatStringToHandle(630, 450, GetColor(180, 180, 0), fontHandl, "%s", "この装備で検品を始めますか？");
 
 }
 

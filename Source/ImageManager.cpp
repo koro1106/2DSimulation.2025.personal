@@ -37,7 +37,8 @@ void ImageManager::LoadAll()
     images["time"] = LoadGraph("data/image/Art/time.png");
 
     //ListScene
-    images["listBG"] = LoadGraph("data/image/Art/listBG.png");
+    images["listBG"] = LoadGraph("data/image/Art/listBG1.png");
+    images["listTitle"] = LoadGraph("data/image/Art/listTitle.png");
     // ManualScene
     images["manualBG"] = LoadGraph("data/image/Art/manualBG.png");
   //‘•”õ
@@ -77,12 +78,13 @@ void ImageManager::LoadAll()
     images["-1"] = LoadGraph("data/image/Art/-1.png");// back
 
     //ResultScene
-    images["result_S"] = LoadGraph("data/image/Art/S.png");
-    images["result_A"] = LoadGraph("data/image/Art/A.png");
-    images["result_B"] = LoadGraph("data/image/Art/B.png");
-    images["result_C"] = LoadGraph("data/image/Art/C.png");
-    images["result_D"] = LoadGraph("data/image/Art/D.png");
-    images["scoreBG"] = LoadGraph("data/image/Art/t38.png");
+    images["result_Perfect"] = LoadGraph("data/image/Art/Perfect.png");
+    images["result_Great"] = LoadGraph("data/image/Art/Great.png");
+    images["result_Nice"] = LoadGraph("data/image/Art/Nice.png");
+    images["result_Miss"] = LoadGraph("data/image/Art/Miss.png");
+    images["resultBG"] = LoadGraph("data/image/Art/resultBG.png");
+    images["resultBack"] = LoadGraph("data/image/Art/resultBack.png");
+    images["resultNext"] = LoadGraph("data/image/Art/resultNext.png");
 
     // ResultCheckScene
     images["checkBG"] = LoadGraph("data/image/Art/t26.png");

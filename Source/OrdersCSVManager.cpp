@@ -7,6 +7,7 @@
 
 // static•Ï”‚Ì’è‹`
 std::vector<OrdersCSVManager::OrderRow> OrdersCSVManager::orders;
+int OrdersCSVManager::currentOrderIndex = 0;
 
 void OrdersCSVManager::LoadOrdersCSV(const std::string& csvPath)
 {

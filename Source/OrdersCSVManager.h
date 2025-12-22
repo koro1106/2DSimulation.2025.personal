@@ -15,4 +15,5 @@ public:
 		std::string order4;
 	};
 	static std::vector<OrderRow> orders; // vectorにOrderRowのデータ貯める
+	static int currentOrderIndex; // 今表示してるCSVの行
 };

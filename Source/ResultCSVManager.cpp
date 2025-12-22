@@ -6,6 +6,7 @@
 
 // static ƒƒ“ƒo‚Ì’è‹`
 std::vector<ResultCSVManager::ResultRow> ResultCSVManager::result;
+int ResultCSVManager::currentOrderIndex = 0;
 
 void ResultCSVManager::LoadResultCSV(const std::string& csvPath)
 {

@@ -13,4 +13,6 @@ public:
 private:
 	std::vector<Button> buttons;
 	int fontHandl;
+	// アニメーション用
+	float openAmount = 0.0f; // 初期状態
 };

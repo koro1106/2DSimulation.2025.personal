@@ -21,7 +21,7 @@ CLOTHES4,SceneBack,PLAY,overlay
 CLOTHES4,Back,CLOTHES3,overlay
 CLOTHES4,Next,CLOTHES1,overlay
 RESULTCHECK,SceneBack,PLAY,overlay
-RESULTCHECK,Yes,RESULT,overlay
-RESULT,,,
+RESULTCHECK,ResultBack,PLAY,overlay
+RESULT,ResultNext,PLAY,overlay
 TITLECHECK,SceneBack,PLAY,overlay
 PLAY,Yes,TITLE,switch

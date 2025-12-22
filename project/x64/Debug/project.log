@@ -1,48 +1,93 @@
-﻿  imgui.cpp
-  App.cpp
+﻿  ResultScene.cpp
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(349,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(708,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(1106,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(1610,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(2014,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(2241,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(2384,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(2557,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(2702,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(2788,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(2891,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(2991,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3120,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3264,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3382,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3516,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3698,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3803,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3882,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3984,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(4114,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(4608,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(4761,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(4905,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(5043,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(5190,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(5323,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(5438,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
+C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(5605,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Source/ResultScene.cpp' をコンパイルしています)
+  
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  main.cpp
-  ObjectManager.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  SceneManager.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  Time.cpp
-  BootScene.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  Button.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(73,12): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(74,12): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(83,21): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(84,21): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\student\Desktop\新しいフォルダー\Source\Button.cpp(97,6): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-  ButtonPosCSVManager.cpp
-  ClothesData.cpp
-  ClothesScene2.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  ClothesScene3.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  ClothesScene4.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  CSVManager.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  ManualScene.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  OverlayAnimation.cpp
-  PlayScene.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  ResultCheck.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  ResultCSVManager.cpp
-  SceneFactory.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  コードを生成中...
-  コンパイル中...
-  TitleCheck.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  TitleScene.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-  OrdersCSVManager.cpp
-  コードを生成中...
-  LINK : 前回のインクリメンタル リンクで C:\Users\student\Desktop\新しいフォルダー\x64\Debug\project.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
-  project.vcxproj -> C:\Users\student\Desktop\新しいフォルダー\x64\Debug\project.exe
+  project.vcxproj -> D:\個人製作＿5\x64\Debug\project.exe

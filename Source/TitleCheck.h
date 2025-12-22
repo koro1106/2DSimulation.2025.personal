@@ -22,6 +22,6 @@ private:
 	int newWidth, newHeight; // V‚µ‚¢•‚Æ‚‚³
 	int drawX, drawY; // •`‰æˆÊ’u
 	float scale = 1.0f;    // Šg‘å—¦
-	float scaleSpeed = 0.06f; // Šg‘å‘¬“x
+	float scaleSpeed = 0.03f; // Šg‘å‘¬“x
 
 };

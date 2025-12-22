@@ -9,7 +9,7 @@
 #include "ResultScene.h"
 #include "ResultCheck.h"
 #include "TitleCheck.h"
-//#include "DxLib.h"
+#include "DxLib.h"
 class OverlayManager 
 {
 public:

@@ -4,13 +4,19 @@
 #include "ImageManager.h"
 #include "OverlayAnimation.h"
 
-Button::Button(int x, int y, int width, int height, const std::string& buttonID, int imageHandle,const std::function<void()> onClick)
-	: x(x), y(y), width(width), height(height), buttonID(buttonID), imageHandle(imageHandle), onClickFunc(onClick) 
+// 画像一枚のボタン
+Button::Button(int x, int y, int width, int height, const std::string& buttonID, int normalImage, std::function<void()> onClick)
+	: x(x), y(y), width(width), height(height),buttonID(buttonID),normalImage(normalImage), hoverImage(-1), onClickFunc(onClick)
 {
 	// アニメーションの最終位置（本来の位置）記録
 	originalX = x;
 	originalY = y;
 }
+
+// ホバー画像ありのボタン
+Button::Button(int x, int y, int width, int height, const std::string& buttonID, int normalImage, int hoverImage,const std::function<void()> onClick)
+	: x(x), y(y), width(width), height(height), buttonID(buttonID), normalImage(normalImage), hoverImage(hoverImage), onClickFunc(onClick)
+{}
 
 bool Button::IsMouseOver(int mouseX, int mouseY) const
 {
@@ -38,10 +44,13 @@ void Button::OnClick() const
 
 void Button::Draw() const
 {
-	if (imageHandle != -1)
-	{
-		DrawGraph(x, y, imageHandle, TRUE);
-	}
+	int mouseX, mouseY;
+	GetMousePoint(&mouseX, &mouseY);
+
+	// カーソルが上に乗っているかで画像分ける
+	int image = (hoverImage != -1 && IsMouseOver(mouseX, mouseY)) ? hoverImage : normalImage;
+
+	DrawGraph(x, y, image, TRUE);
 }
 
 void Button::ButtonSystem(std::vector<Button>& buttons)

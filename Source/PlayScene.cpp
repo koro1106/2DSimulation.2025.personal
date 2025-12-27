@@ -13,12 +13,14 @@ PlayScene::PlayScene()
 	// Get the image handle
 	int bg4Image = ImageManager::Get("bg4");
 	int list = ImageManager::Get("list");
+	int list_hover = ImageManager::Get("list_hover");
 	int hatena = ImageManager::Get("hatena");
-	int book = ImageManager::Get("book");
+	int hatena_hover = ImageManager::Get("hatena_hover");
 	int setting = ImageManager::Get("setting");
+	int setting_hover = ImageManager::Get("setting_hover");
 	int exit = ImageManager::Get("exit");
 
-	buttons.emplace_back(1770, 530, 149, 148, "Title", setting,[]() { // タイトル確認ウィンドウ
+	buttons.emplace_back(1770, 530, 149, 148, "Title", setting, setting_hover,[]() { // タイトル確認ウィンドウ
 		OverlayManager::ShowOverlay("TITLECHECK");
 		});
 	buttons.emplace_back(1590, 860, 280, 174, "Exit", exit, []() { // リザルト確認ウィンドウ
@@ -29,10 +31,10 @@ PlayScene::PlayScene()
 		OverlayManager::ShowOverlay("CLOTHES1");
 		OverlayManager::isOverlayVisible = true;
 	});
-	buttons.emplace_back(1770, 130, 120, 120, "List", list, []() {
+	buttons.emplace_back(1770, 130, 120, 120, "List", list, list_hover,[]() {
 		OverlayManager::ShowOverlay("LIST");
 	});
-	buttons.emplace_back(1770, 330, 110, 126, "Manual", hatena, []() {
+	buttons.emplace_back(1770, 330, 110, 126, "Manual", hatena, hatena_hover,[]() {
 		OverlayManager::ShowOverlay("MANUAL");
 	});
 

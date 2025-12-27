@@ -27,8 +27,11 @@ void ImageManager::LoadAll()
     images["cursor"] = LoadGraph("data/image/Art/cursor.png"); // ƒJ[ƒ\ƒ‹‰æ‘œ
     images["exit"] = LoadGraph("data/image/Art/exit.png");
     images["list"] = LoadGraph("data/image/Art/list.png");
+    images["list_hover"] = LoadGraph("data/image/Art/list_hover.png");
     images["setting"] = LoadGraph("data/image/Art/setting.png");
+    images["setting_hover"] = LoadGraph("data/image/Art/setting_hover.png");
     images["hatena"] = LoadGraph("data/image/Art/hatena.png");
+    images["hatena_hover"] = LoadGraph("data/image/Art/hatena_hover.png");
     images["book"] = LoadGraph("data/image/Art/book.png");
     images["human"] = LoadGraph("data/image/Art/human.png");
     images["h1"] = LoadGraph("data/image/Art/h1.png");

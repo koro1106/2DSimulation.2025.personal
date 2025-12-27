@@ -38,7 +38,7 @@ void ListScene::Draw()
 	GetGraphSize(img, &w, &h);
 
 	// 上端の固定座標
-	int topX = 560;
+	int topX = 540;
 	int topY = 200;
 
 	float scale = openAmount; // 0:見えない、1:全表示
@@ -51,7 +51,7 @@ void ListScene::Draw()
 	DrawExtendGraph(topX, topY, bottomX, bottomY, img, TRUE);
 
 	// 発注リストタイトル描画
-	DrawGraph(790, 180, ImageManager::Get("listTitle"), TRUE);
+	DrawGraph(820, 180, ImageManager::Get("listTitle"), TRUE);
 
 	// CSVの発注内容描画
 	if (!OrdersCSVManager::orders.empty())
@@ -59,10 +59,10 @@ void ListScene::Draw()
 		int idx = OrdersCSVManager::currentOrderIndex;
 		const auto& row = OrdersCSVManager::orders[idx]; // idx行目
 
-		DrawFormatStringToHandle(650, 370, GetColor(0, 0, 0), fontHandl, "%s", row.order1.c_str());
-		DrawFormatStringToHandle(650, 450, GetColor(0, 0, 0), fontHandl, "%s", row.order2.c_str());
-		DrawFormatStringToHandle(650, 480, GetColor(0, 0, 0), fontHandl, "%s", row.order3.c_str());
-		DrawFormatStringToHandle(650, 560, GetColor(0, 0, 0), fontHandl, "%s", row.order4.c_str());
+		DrawFormatStringToHandle(600, 370, GetColor(0, 0, 0), fontHandl, "%s", row.order1.c_str());
+		DrawFormatStringToHandle(600, 450, GetColor(0, 0, 0), fontHandl, "%s", row.order2.c_str());
+		DrawFormatStringToHandle(600, 480, GetColor(0, 0, 0), fontHandl, "%s", row.order3.c_str());
+		DrawFormatStringToHandle(600, 560, GetColor(0, 0, 0), fontHandl, "%s", row.order4.c_str());
 	}
 	//ボタン描画
 	for (const auto& button : buttons)

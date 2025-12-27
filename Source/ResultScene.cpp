@@ -12,6 +12,9 @@ ResultScene::ResultScene()
 	next = ImageManager::Get("resultNext");
 
 	RefreshButtons(); // 初期状態のボタン
+
+	AddFontResourceEx("data/font/cinecaption226.ttf", FR_PRIVATE, NULL); // Windowsが一時的にフォント使えるようになる。インストール不要
+	fontHandl = CreateFontToHandle("しねきゃぷしょん", 30, 0);
 }
 
 ResultScene::~ResultScene()
@@ -58,7 +61,7 @@ void ResultScene::Update()
 }
 void ResultScene::Draw()
 {
-	DrawGraph(200, 150, ImageManager::Get("resultBG"), TRUE); // 背景
+	DrawGraph(410, 250, ImageManager::Get("resultBG"), TRUE); // 背景
 
 	//ボタン描画
 	for (const auto& button : buttons)
@@ -67,14 +70,22 @@ void ResultScene::Draw()
 	}
 
 	// ランクに応じて画像表示
-	if (rank == "Perfect")
-		DrawGraph(600, 500, ImageManager::Get("result_Perfect"), TRUE);
-	else if (rank == "Great")
-		DrawGraph(600, 500, ImageManager::Get("result_Great"), TRUE);
-	else if (rank == "Nice")
-		DrawGraph(600, 500, ImageManager::Get("result_Nice"), TRUE);
-	else if (rank == "Miss")
-		DrawGraph(600, 500, ImageManager::Get("result_Miss"), TRUE);
+	if (rank == "Perfect") {
+		DrawGraph(800, 450, ImageManager::Get("result_Perfect"), TRUE);
+		DrawFormatStringToHandle(780, 610, GetColor(180, 160, 0), fontHandl, "素晴らしい！完璧ですね");
+	}
+	else if (rank == "Great") {
+		DrawGraph(800, 450, ImageManager::Get("result_Great"), TRUE);
+		DrawFormatStringToHandle(700, 610, GetColor(180, 160, 0), fontHandl, "いい感じです。このまま頑張りましょう");
+	}
+	else if (rank == "Nice") {
+		DrawGraph(800, 450, ImageManager::Get("result_Nice"), TRUE);
+		DrawFormatStringToHandle(770, 610, GetColor(180, 160, 0), fontHandl, "もう少し頑張りましょう");
+	}
+	else if (rank == "Miss") {
+		DrawGraph(800, 450, ImageManager::Get("result_Miss"), TRUE);
+		DrawFormatStringToHandle(750, 610, GetColor(180, 160, 0), fontHandl, "発注リストをよく見ましょう");
+	}
 }
 
 // 装備とゴールの値の差を計算
@@ -100,7 +111,7 @@ void ResultScene::RefreshButtons()
 	{
 		// Next だけ表示
 		buttons.emplace_back(
-			1000, 1000, 217, 74, "ResultNext", next,
+			850, 700, 217, 74, "ResultNext", next,
 			[]() {
 				if (OrdersCSVManager::currentOrderIndex + 1 < OrdersCSVManager::orders.size())
 					OrdersCSVManager::currentOrderIndex++; // 次の行へ進める
@@ -116,7 +127,7 @@ void ResultScene::RefreshButtons()
 	{
 		// Back だけ表示
 		buttons.emplace_back(
-			570, 1000, 217, 74, "ResultBack", back,
+			850, 700, 217, 74, "ResultBack", back,
 			[]() {
 				OverlayManager::HideOverlay();
 			}

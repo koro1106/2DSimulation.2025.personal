@@ -1,5 +1,6 @@
 #include "ClothesScene4.h"
 #include "ImageManager.h"
+#include "SoundManager.h"
 #include "ClothesData.h"
 #include "OverlayManager.h"
 #include "EquipmentsCSVManager.h"
@@ -7,7 +8,6 @@
 
 ClothesScene4::ClothesScene4()
 {
-	ImageManager::LoadAll();
 	// Get the image handle
 	int clothesBack = ImageManager::Get("back");
 	int back = ImageManager::Get("-1");
@@ -24,40 +24,48 @@ ClothesScene4::ClothesScene4()
 		ClothesData::SetSelectedBoots("boots1",ImageManager::Get("Boots1"));// 装備中の装備画像セット
 		ClothesData::SetSelectedEquipmentID("boots1");// 装備IDセット
 		ClothesData::UpdateScoreAndExplanation("boots1");
+		SoundManager::PlaySE("equipmentClick");
 		});
 	auto [x2, y2] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_2);
 	buttons.emplace_back(x2, y2, 100, 100, "Boots_2", boots2, []() {
 		ClothesData::SetSelectedBoots("boots2",ImageManager::Get("Boots2"));
 		ClothesData::SetSelectedEquipmentID("boots2");
 		ClothesData::UpdateScoreAndExplanation("boots2");
+		SoundManager::PlaySE("equipmentClick");
 		});
 	auto [x3, y3] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_3);
 	buttons.emplace_back(x3, y3, 100, 100, "Boots_3", boots3, []() {
 		ClothesData::SetSelectedBoots("boots3", ImageManager::Get("Boots3"));
 		ClothesData::SetSelectedEquipmentID("boots3");
 		ClothesData::UpdateScoreAndExplanation("boots3");
+		SoundManager::PlaySE("equipmentClick");
 		});
 	auto [x4, y4] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_4);
 	buttons.emplace_back(x4, y4, 100, 100, "Boots_4", boots4, []() {
 		ClothesData::SetSelectedBoots("boots4", ImageManager::Get("Boots4"));
 		ClothesData::SetSelectedEquipmentID("boots4");
 		ClothesData::UpdateScoreAndExplanation("boots4");
+		SoundManager::PlaySE("equipmentClick");
 		});
 	auto [x5, y5] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_5);
 	buttons.emplace_back(x5, y5, 100, 100, "Boots_5", boots5, []() {
 		ClothesData::SetSelectedBoots("boots5", ImageManager::Get("Boots5"));
 		ClothesData::SetSelectedEquipmentID("boots5");
 		ClothesData::UpdateScoreAndExplanation("boots5");
+		SoundManager::PlaySE("equipmentClick");
 		});
 
 	buttons.emplace_back(ButtonPosCSVManager::pos.sceneBackButtonX, ButtonPosCSVManager::pos.sceneBackButtonY, 120, 93, "SceneBack", clothesBack, []() {
 		OverlayManager::HideOverlay();
+		SoundManager::PlaySE("clickBack");
 		});
 	buttons.emplace_back(ButtonPosCSVManager::pos.backButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Back", back, []() {
 		OverlayManager::ShowOverlay("CLOTHES3");
+		SoundManager::PlaySE("click");
 		});
 	buttons.emplace_back(ButtonPosCSVManager::pos.nextButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Next", next, []() {
 		OverlayManager::ShowOverlay("CLOTHES1");
+		SoundManager::PlaySE("click");
 		});
 
 	isInitialized = true; // 初期化したよ

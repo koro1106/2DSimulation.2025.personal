@@ -1,18 +1,20 @@
 #include "ImageManager.h"
 #include "ClothesData.h"
 #include "OverlayManager.h"
+#include "SoundManager.h"
 
 TitleCheck::TitleCheck()
 {
-	ImageManager::LoadAll();
 	int back = ImageManager::Get("back");
 	int yes = ImageManager::Get("yes");
 
 	buttons.emplace_back(390, 250, 120, 93, "SceneBack", back, []() {
+		SoundManager::PlaySE("clickBack");
 		OverlayManager::HideOverlay();
 		});
 	buttons.emplace_back(810, 610, 217, 74, "Yes", yes, []() {
 		SceneManager::ChangeScene("TITLE");
+		SoundManager::PlaySE("click");
 		});
 	AddFontResourceEx("data/font/cinecaption226.ttf", FR_PRIVATE, NULL); // Windowsが一時的にフォント使えるようになる。インストール不要
 	fontHandl = CreateFontToHandle("しねきゃぷしょん", 45, 0);

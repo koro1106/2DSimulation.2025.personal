@@ -3,15 +3,16 @@
 #include "OverlayManager.h"
 #include "OrdersCSVManager.h"
 #include <iostream>
+#include "SoundManager.h"
 
 ListScene::ListScene()
 {
-	ImageManager::LoadAll();
 	// Get the image handle
 	int back = ImageManager::Get("back");
 	 
 	buttons.emplace_back(500, 200, 120, 93, "SceneBack", back, []() {
 		OverlayManager::HideOverlay();
+		SoundManager::PlaySE("clickBack");
 		});
 	AddFontResourceEx("data/font/cinecaption226.ttf", FR_PRIVATE, NULL); // Windowsが一時的にフォント使えるようになる。インストール不要
 	fontHandl = CreateFontToHandle("しねきゃぷしょん", 30, 0);

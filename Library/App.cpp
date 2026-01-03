@@ -8,7 +8,8 @@
 #include "../Source/ResultCSVManager.h"
 #include "../Source/ButtonPosCSVManager.h"
 #include "../Source/OrdersCSVManager.h"
-
+#include "../Source/SoundManager.h"
+#include "../Source/ImageManager.h"
 void AppInit()
 {
 	ObjectManager::Init();
@@ -19,6 +20,8 @@ void AppInit()
 	ResultCSVManager::LoadResultCSV("Result.csv");
 	ButtonPosCSVManager::LoadPositionsCSV("ButtonPosition.csv");
 	OrdersCSVManager::LoadOrdersCSV("Orders.csv");
+	ImageManager::LoadAll();
+	SoundManager::LoadAll();
 }
 
 void AppUpdate()

@@ -4,10 +4,10 @@
 #include "ResultCSVManager.h"
 #include "OrdersCSVManager.h"
 #include "ClothesData.h"
+#include "SoundManager.h"
 
 ResultScene::ResultScene()
 {
-	ImageManager::LoadAll();
 	back = ImageManager::Get("resultBack");
 	next = ImageManager::Get("resultNext");
 
@@ -120,6 +120,7 @@ void ResultScene::RefreshButtons()
 					ResultCSVManager::currentOrderIndex++; // Ÿ‚Ìs‚Öi‚ß‚é
 
 				OverlayManager::HideOverlay();
+				SoundManager::PlaySE("click");
 			}
 		);
 	}
@@ -130,6 +131,7 @@ void ResultScene::RefreshButtons()
 			850, 700, 217, 74, "ResultBack", back,
 			[]() {
 				OverlayManager::HideOverlay();
+				SoundManager::PlaySE("clickBack");
 			}
 		);
 	}

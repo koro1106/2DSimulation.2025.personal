@@ -2,10 +2,14 @@
 #include "ImageManager.h"
 #include "DxLib.h"
 #include "OverlayManager.h"
+#include "SoundManager.h"
 
 TitleScene::TitleScene()
 {
-	ImageManager::LoadAll();
+	prevButton = true; // 押しっぱなしで反応しないように
+
+	//BGM再生
+	SoundManager::PlayBGM("titleBGM");
 
 	AddFontResourceEx("data/font/cinecaption226.ttf", FR_PRIVATE, NULL); // Windowsが一時的にフォント使えるようになる。インストール不要
 	fontHandl = CreateFontToHandle("しねきゃぷしょん", 45, 0);
@@ -29,6 +33,8 @@ void TitleScene::Update()
 	//クリックした瞬間だけ
 	if (isMousePressed && !prevButton)
 	{
+		//SE再生
+	//	SoundManager::PlaySE("startSE");
 		OverlayManager::HideOverlay();
 		SceneManager::ChangeScene("PLAY");
 	}

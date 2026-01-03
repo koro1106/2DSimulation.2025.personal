@@ -1,5 +1,6 @@
 #include "ClothesScene3.h"
 #include "ImageManager.h"
+#include "SoundManager.h"
 #include "ClothesData.h"
 #include "OverlayManager.h"
 #include "EquipmentsCSVManager.h"
@@ -7,7 +8,7 @@
 
 ClothesScene3::ClothesScene3()
 {
-	ImageManager::LoadAll();
+	//ImageManager::LoadAll();
 	// Get the image handle
 	int clothesBack = ImageManager::Get("back");
 	int back = ImageManager::Get("-1");
@@ -24,40 +25,48 @@ ClothesScene3::ClothesScene3()
 		ClothesData::SetSelectedBracers("bracers1",ImageManager::Get("Bracers1"));// 装備中の装備画像セット
 		ClothesData::SetSelectedEquipmentID("bracers1");// 装備IDセット
 		ClothesData::UpdateScoreAndExplanation("bracers1");
+		SoundManager::PlaySE("equipmentClick");
 		});
 	auto [x2, y2] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_2);
 	buttons.emplace_back(x2, y2, 100, 100, "Bracers_2", bracers2, []() {
 		ClothesData::SetSelectedBracers("bracers2",ImageManager::Get("Bracers2"));
 		ClothesData::SetSelectedEquipmentID("bracers2");
 		ClothesData::UpdateScoreAndExplanation("bracers2");
+		SoundManager::PlaySE("equipmentClick");
 		});
 	auto [x3, y3] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_3);
 	buttons.emplace_back(x3, y3, 100, 100, "Bracers_3", bracers3, []() {
 		ClothesData::SetSelectedBracers("bracers3",ImageManager::Get("Bracers3"));
 		ClothesData::SetSelectedEquipmentID("bracers3");
 		ClothesData::UpdateScoreAndExplanation("bracers3");
+		SoundManager::PlaySE("equipmentClick");
 		});
 	auto [x4, y4] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_4);
 	buttons.emplace_back(x4, y4, 100, 100, "Bracers_4", bracers4, []() {
 		ClothesData::SetSelectedBracers("bracers4",ImageManager::Get("Bracers4"));
 		ClothesData::SetSelectedEquipmentID("bracers4");
 		ClothesData::UpdateScoreAndExplanation("bracers4");
+		SoundManager::PlaySE("equipmentClick");
 		});
 	auto [x5, y5] = ButtonPosCSVManager::GetButtonPosition(ButtonPosCSVManager::ButtonNo_5);
 	buttons.emplace_back(x5, y5, 100, 100, "Bracers_5", bracers5, []() {
 		ClothesData::SetSelectedBracers("bracers5",ImageManager::Get("Bracers5"));
 		ClothesData::SetSelectedEquipmentID("bracers5");
 		ClothesData::UpdateScoreAndExplanation("bracers5");
+		SoundManager::PlaySE("equipmentClick");
 		});
 
 	buttons.emplace_back(ButtonPosCSVManager::pos.sceneBackButtonX, ButtonPosCSVManager::pos.sceneBackButtonY, 120, 93, "SceneBack", clothesBack, []() {
 		OverlayManager::HideOverlay();
+		SoundManager::PlaySE("clickBack");
 		});
 	buttons.emplace_back(ButtonPosCSVManager::pos.backButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Back", back, []() {
 		OverlayManager::ShowOverlay("CLOTHES2");
+		SoundManager::PlaySE("click");
 		});
 	buttons.emplace_back(ButtonPosCSVManager::pos.nextButtonX, ButtonPosCSVManager::pos.backNextButtonY, 150, 150, "Next", next, []() {
 		OverlayManager::ShowOverlay("CLOTHES4");
+		SoundManager::PlaySE("click");
 		});
 
 	isInitialized = true; // 初期化したよ

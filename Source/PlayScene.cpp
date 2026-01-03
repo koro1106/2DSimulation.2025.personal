@@ -3,14 +3,16 @@
 #include "OverlayManager.h"
 #include "ClothesData.h"
 #include "EquipmentDrawer.h"
+#include "SoundManager.h"
 
 PlayScene::PlayScene()
    :light1(1640, 180, 28), // コンストラクタ読んで初期化
    light2(1580, 285, 28),
    light3(1625, 385, 28)
 {
-	ImageManager::LoadAll();
-	// Get the image handle
+	//BGM再生
+	SoundManager::PlayBGM("playSceneBGM");
+	// 画像ハンドル取得
 	int bg4Image = ImageManager::Get("bg4");
 	int list = ImageManager::Get("list");
 	int list_hover = ImageManager::Get("list_hover");
@@ -22,20 +24,25 @@ PlayScene::PlayScene()
 
 	buttons.emplace_back(1770, 530, 149, 148, "Title", setting, setting_hover,[]() { // タイトル確認ウィンドウ
 		OverlayManager::ShowOverlay("TITLECHECK");
+		SoundManager::PlaySE("click");
 		});
 	buttons.emplace_back(1590, 860, 280, 174, "Exit", exit, []() { // リザルト確認ウィンドウ
 		OverlayManager::ShowOverlay("RESULTCHECK");
+		SoundManager::PlaySE("click");
 		});
 
 	buttons.emplace_back(20, 340, 379, 720, "Clothes", bg4Image, []() { // 装備画面 
 		OverlayManager::ShowOverlay("CLOTHES1");
 		OverlayManager::isOverlayVisible = true;
+		SoundManager::PlaySE("click");
 	});
 	buttons.emplace_back(1770, 130, 120, 120, "List", list, list_hover,[]() {
 		OverlayManager::ShowOverlay("LIST");
+		SoundManager::PlaySE("opneList");
 	});
 	buttons.emplace_back(1770, 330, 110, 126, "Manual", hatena, hatena_hover,[]() {
 		OverlayManager::ShowOverlay("MANUAL");
+		SoundManager::PlaySE("click");
 	});
 
 	SetMouseDispFlag(FALSE); //　OSのマウスカーソル消す

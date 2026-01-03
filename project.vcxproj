@@ -176,6 +176,7 @@
     <ClInclude Include="Source\ResultScene.h" />
     <ClInclude Include="Source\Screen.h" />
     <ClInclude Include="Source\SceneFactory.h" />
+    <ClInclude Include="Source\SoundManager.h" />
     <ClInclude Include="Source\TitleCheck.h" />
     <ClInclude Include="Source\TitleScene.h" />
     <ClInclude Include="Source\OrdersCSVManager.h" />
@@ -217,6 +218,7 @@
     <ClCompile Include="Source\ResultCSVManager.cpp" />
     <ClCompile Include="Source\ResultScene.cpp" />
     <ClCompile Include="Source\SceneFactory.cpp" />
+    <ClCompile Include="Source\SoundManager.cpp" />
     <ClCompile Include="Source\TitleCheck.cpp" />
     <ClCompile Include="Source\TitleScene.cpp" />
     <ClCompile Include="Source\OrdersCSVManager.cpp" />

@@ -1,5 +1,5 @@
 #pragma once
-#include <map>
+#include <unordered_map>
 #include <string>
 #include "DxLib.h"
 
@@ -11,7 +11,7 @@ public:
 	 static void PlaySE(const std::string& name);
 	 static void StopBGM();
 private:
-	static std::map<std::string, int> bgm;
-	static std::map<std::string, int> se;
+	static std::unordered_map<std::string, int> bgm;
+	static std::unordered_map<std::string, int> se;
 	static std::string currentBGM; // åªç›ÇÃBGM
 };

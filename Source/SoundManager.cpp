@@ -1,8 +1,8 @@
 #include "SoundManager.h"
 #include <cassert>
 
-std::map<std::string, int > SoundManager::bgm;
-std::map<std::string, int > SoundManager::se;
+std::unordered_map<std::string, int > SoundManager::bgm;
+std::unordered_map<std::string, int > SoundManager::se;
 std::string SoundManager::currentBGM = "";
 
 void SoundManager::LoadAll()

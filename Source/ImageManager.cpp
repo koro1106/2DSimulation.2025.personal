@@ -1,6 +1,6 @@
 #include "ImageManager.h"
 
-std::map<std::string, int> ImageManager::images;
+std::unordered_map<std::string, int> ImageManager::images;
 
 void ImageManager::LoadAll()
 {

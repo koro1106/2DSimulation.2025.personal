@@ -14,7 +14,7 @@ std::string ClothesData::beltID = "";
 std::string ClothesData::bracersID = "";
 std::string ClothesData::bootsID = "";
 
-std::string ClothesData::scoreText = "";
+std::string ClothesData::nameText = "";
 std::string ClothesData::explanationText = "";
 
 std::string ClothesData::selectedEquipmentID = "";
@@ -109,12 +109,13 @@ void ClothesData::UpdateScoreAndExplanation(const std::string& equipmentID)
 		if (equipment != nullptr) {
 			// UTF-8 → Shift-JIS変換
 			std::string explanationSJIS = Utf8ToSjis(equipment->explanation);
+			std::string nameSJIS = Utf8ToSjis(equipment->name);
 			
-			scoreText = "スコア：" + std::to_string(equipment->score);
-			explanationText = "説明：" + explanationSJIS;
+			nameText = nameSJIS;
+			explanationText =  explanationSJIS;
 		}
 		else {
-			scoreText = "スコア：不明";
+			nameText = "装備名：不明";
 			explanationText = "説明：見つからない";
 		}
 	}

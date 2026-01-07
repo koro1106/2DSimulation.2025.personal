@@ -44,15 +44,15 @@ void ResultCheck::Draw()
 	int centerY = 290 + imageHeight / 2;
 
 	// Šg‘å‚µ‚½‰æ‘œ‚ÌV‚µ‚¢•`‰æˆÊ’u
-	int newWidth = (int)(imageWidth * scale);
-	int newHeight = (int)(imageHeight * scale);
+	int neWidth = (int)(imageWidth * scale);
+	int neHeight = (int)(imageHeight * scale);
 
 	// V‚µ‚¢¶ã‚ÌÀ•W‚ÍA‰æ‘œ‚Ì’†S‚©‚ç”¼•ª‚¾‚¯‚¸‚ç‚µ‚½ˆÊ’u
-	int drawX = centerX - newWidth / 2;
-	int drawY = centerY - newHeight / 2;
+	int drawX = centerX - neWidth / 2;
+	int drawY = centerY - neHeight / 2;
 
 	// ”wŒi‚Ì‚Ó‚¿‚ÌŠg‘å—¦”½‰f
-	DrawExtendGraph(drawX, drawY, drawX + newWidth, drawY + newHeight, img, TRUE);
+	DrawExtendGraph(drawX, drawY, drawX + neWidth, drawY + neHeight, img, TRUE);
 
 	//ƒ{ƒ^ƒ“•`‰æ
 	for (const auto& button : buttons)

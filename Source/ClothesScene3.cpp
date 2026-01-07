@@ -106,6 +106,8 @@ void ClothesScene3::Draw()
 	}
 
 	//ëïîıÇÃê‡ñæï\é¶
-	DrawFormatStringToHandle(1450, 500, GetColor(255, 255, 255), fontHandl, "%s", ClothesData::scoreText.c_str());
-	DrawFormatStringToHandle(1450, 540, GetColor(255, 255, 255), fontHandl, "%s", ClothesData::explanationText.c_str());
+	DrawFormatStringToHandle(1450, 380, GetColor(180, 180, 0), fontHandl, "%s", "ëïîıñºÅF");
+	DrawFormatStringToHandle(1450, 420, GetColor(180, 180, 0), fontHandl, "%s", ClothesData::nameText.c_str());
+	DrawFormatStringToHandle(1460, 540, GetColor(180, 180, 0), fontHandl, "%s", "ê‡ñæÅF");
+	DrawFormatStringToHandle(1470, 580, GetColor(180, 180, 0), fontHandl, "%s", ClothesData::explanationText.c_str());
 }

@@ -39,7 +39,7 @@ public:
 
 	//選択中の装備の説明
 	static void UpdateScoreAndExplanation(const std::string& equipmentID);
-	static std::string scoreText;
+	static std::string nameText;
 	static std::string explanationText;
 
 	// 各装備スコアの取得

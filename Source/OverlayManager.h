@@ -10,6 +10,7 @@
 #include "ResultCheck.h"
 #include "TitleCheck.h"
 //#include "DxLib.h"
+//画面に重ねて表示するオーバーレイの管理クラス
 class OverlayManager 
 {
 public:

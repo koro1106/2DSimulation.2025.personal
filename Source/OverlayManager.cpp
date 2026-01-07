@@ -112,9 +112,8 @@ void OverlayManager::Update()
 }
 void OverlayManager::Draw()
 {
-	if (!isOverlayVisible) return;
-	
-	// BackGround Black
+	if (!isOverlayVisible) return;	
+	// îwåià√Ç≠
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
 	DrawBox(0, 0, 1920, 1080, GetColor(0, 0, 0), TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);

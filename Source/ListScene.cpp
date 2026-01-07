@@ -7,7 +7,7 @@
 
 ListScene::ListScene()
 {
-	// Get the image handle
+	// 画像ハンドル取得
 	int back = ImageManager::Get("back");
 	 
 	buttons.emplace_back(500, 200, 120, 93, "SceneBack", back, []() {
@@ -16,6 +16,8 @@ ListScene::ListScene()
 		});
 	AddFontResourceEx("data/font/cinecaption226.ttf", FR_PRIVATE, NULL); // Windowsが一時的にフォント使えるようになる。インストール不要
 	fontHandl = CreateFontToHandle("しねきゃぷしょん", 30, 0);
+
+	SetOrderText();
 }
 
 ListScene::~ListScene()
@@ -28,6 +30,16 @@ void ListScene::Update()
 
 	if (openAmount < 1.0f) {
 		openAmount += 0.06f;  //少しづつ表示 
+	}
+
+	// 上から順番に表示
+	for (int i = 0; i < 4; i++)
+	{
+		if (!orderMessages[i].IsFinished())
+		{
+			orderMessages[i].Update();
+			break; // 1つずつ
+		}
 	}
 }
 
@@ -55,19 +67,33 @@ void ListScene::Draw()
 	DrawGraph(820, 180, ImageManager::Get("listTitle"), TRUE);
 
 	// CSVの発注内容描画
-	if (!OrdersCSVManager::orders.empty())
-	{
-		int idx = OrdersCSVManager::currentOrderIndex;
-		const auto& row = OrdersCSVManager::orders[idx]; // idx行目
+	int x = 600;
+	int y = 370;
+	int lineSpace = 80; // 行スペース
 
-		DrawFormatStringToHandle(600, 370, GetColor(0, 0, 0), fontHandl, "%s", row.order1.c_str());
-		DrawFormatStringToHandle(600, 450, GetColor(0, 0, 0), fontHandl, "%s", row.order2.c_str());
-		DrawFormatStringToHandle(600, 480, GetColor(0, 0, 0), fontHandl, "%s", row.order3.c_str());
-		DrawFormatStringToHandle(600, 560, GetColor(0, 0, 0), fontHandl, "%s", row.order4.c_str());
+	for (int i = 0; i < 4; i++)
+	{
+		orderMessages[i].Draw(x,y + i * lineSpace,GetColor(0, 0, 0),fontHandl);
 	}
+
 	//ボタン描画
 	for (const auto& button : buttons)
 	{
 		button.Draw();
 	}
+}
+
+// CSV内容を1つの文字列にまとめる
+void ListScene::SetOrderText()
+{
+	if (OrdersCSVManager::orders.empty()) return;
+
+
+	int idx = OrdersCSVManager::currentOrderIndex;
+	const auto& row = OrdersCSVManager::orders[idx]; // idx行目
+
+	orderMessages[0].SetText(row.order1);
+	orderMessages[1].SetText(row.order2);
+	orderMessages[2].SetText(row.order3);
+	orderMessages[3].SetText(row.order4);
 }

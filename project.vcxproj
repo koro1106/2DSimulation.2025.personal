@@ -168,6 +168,7 @@
     <ClInclude Include="Source\Light.h" />
     <ClInclude Include="Source\ListScene.h" />
     <ClInclude Include="Source\ManualScene.h" />
+    <ClInclude Include="Source\Message.h" />
     <ClInclude Include="Source\OverlayAnimation.h" />
     <ClInclude Include="Source\OverlayManager.h" />
     <ClInclude Include="Source\PlayScene.h" />
@@ -211,6 +212,7 @@
     <ClCompile Include="Source\Light.cpp" />
     <ClCompile Include="Source\ListScene.cpp" />
     <ClCompile Include="Source\ManualScene.cpp" />
+    <ClCompile Include="Source\Message.cpp" />
     <ClCompile Include="Source\OverlayAnimation.cpp" />
     <ClCompile Include="Source\OverlayManager.cpp" />
     <ClCompile Include="Source\PlayScene.cpp" />
